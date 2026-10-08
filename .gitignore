@@ -1,0 +1,18 @@
+# Python environment and cache
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local configuration
+.env
+
+# Local vector database storage
+qdrant_storage/
+
+# Generated data and benchmark outputs
+data/processed/*
+evaluation/results/*
+
+# Logs
+*.log
