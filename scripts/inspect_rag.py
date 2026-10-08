@@ -19,12 +19,18 @@ def main() -> None:
         default=3,
     )
 
+    parser.add_argument(
+        "--model",
+        default=settings.generation_model,
+        help="Ollama model tag to use for generation",
+    )
+
     args = parser.parse_args()
 
-    print(f"Model: {settings.generation_model}")
+    print(f"Model: {args.model}")
     print("Initializing RAG pipeline...", flush=True)
 
-    pipeline = RAGPipeline()
+    pipeline = RAGPipeline(model_name=args.model)
 
     try:
         print("Retrieving evidence and generating an answer...", flush=True)

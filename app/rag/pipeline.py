@@ -39,11 +39,20 @@ class RAGResponse:
 
 
 class RAGPipeline:
-    def __init__(self) -> None:
+    def __init__(self, model_name: str | None = None) -> None:
+        self.model_name = (
+            model_name
+            if model_name is not None
+            else settings.generation_model
+        ).strip()
+
+        if not self.model_name:
+            raise ValueError("Model name must not be empty")
+
         self.retriever = DocumentRetriever()
 
         self.llm = ChatOllama(
-            model=settings.generation_model,
+            model=self.model_name,
             base_url=settings.ollama_url,
             temperature=0,
             num_ctx=4096,
