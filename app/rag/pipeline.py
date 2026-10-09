@@ -51,6 +51,11 @@ class RAGPipeline:
 
         self.retriever = DocumentRetriever()
 
+        model_options = {}
+
+        if self.model_name.split(":")[0] == "qwen3":
+            model_options["reasoning"] = False
+
         self.llm = ChatOllama(
             model=self.model_name,
             base_url=settings.ollama_url,
@@ -59,6 +64,7 @@ class RAGPipeline:
             num_predict=400,
             keep_alive="5m",
             client_kwargs={"timeout": 300.0},
+            **model_options,
         )
 
     def ask(self, query: str, top_k: int = 3) -> RAGResponse:
