@@ -1,0 +1,139 @@
+[
+  {
+    "id": "Q01",
+    "category": "conditions",
+    "question": "When is a production deployment rollback required?",
+    "answerable": true,
+    "expected_document_ids": ["ENG-001"],
+    "required_facts": [
+      "The error rate exceeds 5% for five consecutive minutes.",
+      "Alternatively, the health endpoint fails three consecutive checks."
+    ],
+    "reference_answer": "Rollback is required if the error rate exceeds 5% for five consecutive minutes or if the health endpoint fails three consecutive checks."
+  },
+  {
+    "id": "Q02",
+    "category": "single_fact",
+    "question": "How long should a service be monitored after deployment?",
+    "answerable": true,
+    "expected_document_ids": ["ENG-001"],
+    "required_facts": [
+      "Monitor the service for 15 minutes after deployment."
+    ],
+    "reference_answer": "Monitor the service for 15 minutes after deployment."
+  },
+  {
+    "id": "Q03",
+    "category": "multiple_chunks",
+    "question": "Who performs a rollback, who must be informed, and when must the incident report be created?",
+    "answerable": true,
+    "expected_document_ids": ["ENG-001"],
+    "required_facts": [
+      "The on-call engineer performs the rollback.",
+      "The release owner must be informed.",
+      "An incident report must be created within 24 hours."
+    ],
+    "reference_answer": "The on-call engineer performs the rollback and informs the release owner. An incident report must be created within 24 hours."
+  },
+  {
+    "id": "Q04",
+    "category": "exception",
+    "question": "When does temporary system access expire?",
+    "answerable": true,
+    "expected_document_ids": ["SEC-001"],
+    "required_facts": [
+      "Temporary access expires after seven calendar days.",
+      "A shorter duration applies if specified in the approved request."
+    ],
+    "reference_answer": "Temporary access expires after seven calendar days unless the approved request specifies a shorter duration."
+  },
+  {
+    "id": "Q05",
+    "category": "approval",
+    "question": "Who must approve production administrator access?",
+    "answerable": true,
+    "expected_document_ids": ["SEC-001"],
+    "required_facts": [
+      "The employee's manager must approve.",
+      "The system owner must approve.",
+      "The security team must also approve."
+    ],
+    "reference_answer": "Production administrator access requires approval from the employee's manager, the system owner, and the security team."
+  },
+  {
+    "id": "Q06",
+    "category": "time_condition",
+    "question": "When must IT revoke access after an employee leaves?",
+    "answerable": true,
+    "expected_document_ids": ["SEC-001"],
+    "required_facts": [
+      "Within four hours of receiving the departure notification from HR."
+    ],
+    "reference_answer": "IT must revoke access within four hours of receiving the departure notification from HR."
+  },
+  {
+    "id": "Q07",
+    "category": "single_fact",
+    "question": "How often should status updates be provided during a SEV-1 incident?",
+    "answerable": true,
+    "expected_document_ids": ["OPS-001"],
+    "required_facts": [
+      "Every 30 minutes."
+    ],
+    "reference_answer": "Provide a status update every 30 minutes during a SEV-1 incident."
+  },
+  {
+    "id": "Q08",
+    "category": "complete_list",
+    "question": "What must a SEV-1 status update include?",
+    "answerable": true,
+    "expected_document_ids": ["OPS-001"],
+    "required_facts": [
+      "The impact.",
+      "Current actions.",
+      "The time of the next update."
+    ],
+    "reference_answer": "Each update must describe the impact, current actions, and the time of the next update."
+  },
+  {
+    "id": "Q09",
+    "category": "time_unit",
+    "question": "When must the post-incident review be completed?",
+    "answerable": true,
+    "expected_document_ids": ["OPS-001"],
+    "required_facts": [
+      "Within three business days after the incident is resolved."
+    ],
+    "reference_answer": "Complete the post-incident review within three business days after the incident is resolved."
+  },
+  {
+    "id": "Q10",
+    "category": "multiple_documents",
+    "question": "Who approves a production deployment, and who approves production administrator access?",
+    "answerable": true,
+    "expected_document_ids": ["ENG-001", "SEC-001"],
+    "required_facts": [
+      "The release owner approves production deployments.",
+      "Production administrator access requires approval from the employee's manager, system owner, and security team."
+    ],
+    "reference_answer": "The release owner approves production deployments. Production administrator access requires approval from the employee's manager, system owner, and security team."
+  },
+  {
+    "id": "Q11",
+    "category": "unanswerable",
+    "question": "How many paid annual leave days do employees receive?",
+    "answerable": false,
+    "expected_document_ids": [],
+    "required_facts": [],
+    "reference_answer": "The provided documents do not contain enough information to answer."
+  },
+  {
+    "id": "Q12",
+    "category": "unanswerable",
+    "question": "Which exact shell command must the on-call engineer run to roll back a deployment?",
+    "answerable": false,
+    "expected_document_ids": [],
+    "required_facts": [],
+    "reference_answer": "The provided documents do not contain enough information to answer."
+  }
+]
