@@ -126,15 +126,6 @@ class RAGPipeline:
             ]
         )
 
-        print(
-            "Response model:",
-            message.response_metadata.get("model"),
-        )
-        print(
-            "Reasoning returned:",
-            bool(message.additional_kwargs.get("reasoning_content")),
-        )
-
         generation_seconds = perf_counter() - generation_start
 
         if not isinstance(message.content, str):
