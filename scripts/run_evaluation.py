@@ -9,7 +9,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_ollama import ChatOllama
 
 from app.config import settings
-from app.rag.pipeline import SYSTEM_PROMPT
+from app.rag.prompts import SYSTEM_PROMPT, build_user_prompt
 
 
 def main() -> None:
@@ -89,24 +89,9 @@ def main() -> None:
 
     with output_path.open("x", encoding="utf-8") as output:
         for index, case in enumerate(cases, start=1):
-            blocks = []
-
-            for source in case["sources"]:
-                metadata = source["metadata"]
-
-                blocks.append(
-                    f"[{source['label']}]\n"
-                    f"Title: {metadata['title']}\n"
-                    f"Document ID: {metadata['document_id']}\n"
-                    f"Version: {metadata['version']}\n"
-                    f"Content:\n{source['page_content']}"
-                )
-
-            evidence = "\n\n".join(blocks)
-            user_prompt = (
-                f"Question:\n{case['question']}\n\n"
-                f"Evidence:\n{evidence}\n\n"
-                "Answer the question using only the evidence above."
+            user_prompt = build_user_prompt(
+                case["question"],
+                case["sources"],
             )
 
             print(
@@ -130,6 +115,22 @@ def main() -> None:
                     "num_predict": output_limit,
                     "reasoning": reasoning,
                 },
+                "messages_sha256": hashlib.sha256(
+                    json.dumps(
+                        [
+                            {
+                                "role": "system",
+                                "content": SYSTEM_PROMPT,
+                            },
+                            {
+                                "role": "user",
+                                "content": user_prompt,
+                            },
+                        ],
+                        ensure_ascii=False,
+                        sort_keys=True,
+                    ).encode("utf-8")
+                ).hexdigest(),
             }
 
             start = perf_counter()
