@@ -41,6 +41,8 @@ def main() -> None:
             print(f"Chunk ID: {metadata['chunk_id']}")
             print(f"Title: {metadata['title']}")
             print(f"Source: {metadata['source']}")
+            if "pdf_page" in metadata:
+                print(f"PDF page: {metadata['pdf_page']}")
             print("Content:")
             print(document.page_content)
 

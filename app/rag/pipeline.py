@@ -113,11 +113,18 @@ class RAGPipeline:
             document = result.document
             metadata = document.metadata
 
+            page_info = (
+                f"PDF page: {metadata['pdf_page']}\n"
+                if "pdf_page" in metadata
+                else ""
+            )
+
             evidence_blocks.append(
                 f"[S{index}]\n"
                 f"Title: {metadata['title']}\n"
                 f"Document ID: {metadata['document_id']}\n"
                 f"Version: {metadata['version']}\n"
+                f"{page_info}"
                 f"Content:\n{document.page_content}"
             )
 
