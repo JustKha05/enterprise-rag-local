@@ -30,3 +30,22 @@ Document ingestion -> chunking -> embedding -> Qdrant retrieval
 -> local model generation -> evaluation.
 
 The initial project uses pretrained models without fine-tuning.
+
+## Development evaluation
+
+Evaluated four local models on 12 synthetic development questions
+using frozen retrieved evidence.
+
+Fully correct answers:
+- Phi-4 Mini: 10/12 -> 12/12
+- Qwen3 8B: 11/12 -> 11/12
+- DeepSeek-R1 8B: 11/12 -> 9/12
+- Gemma 4 12B: 12/12 -> 12/12
+
+Known issues:
+- Qwen3 confuses approval roles across processes in Q10.
+- DeepSeek Q03 reaches the 1200-token limit without a final answer.
+- DeepSeek omits an exception in Q04 and a timing trigger in Q06.
+
+These are development results, not an independent test benchmark.
+Thinking settings differ across models.
