@@ -1,0 +1,26 @@
+{
+  "rubric": "Manual correctness score from 0 to 4. Scores include completeness; citation quality is assessed separately.",
+  "question_ids": [
+    "Q01", "Q02", "Q03", "Q04", "Q05", "Q06",
+    "Q07", "Q08", "Q09", "Q10", "Q11", "Q12"
+  ],
+  "scores": {
+    "phi4-mini:3.8b": [4, 4, 4, 4, 1, 4, 4, 4, 4, 2, 4, 4],
+    "qwen3:8b": [4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 4, 4],
+    "deepseek-r1:8b": [4, 4, 4, 4, 1, 4, 4, 4, 4, 4, 4, 4],
+    "gemma4:12b": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+  },
+  "error_notes": {
+    "phi4-mini:3.8b": {
+      "Q05": "Missing manager and system owner approvals.",
+      "Q10": "Missing security team approval for administrator access."
+    },
+    "qwen3:8b": {
+      "Q10": "Confuses deployment approval with access approval; also omits manager approval for administrator access."
+    },
+    "deepseek-r1:8b": {
+      "Q05": "Missing manager and system owner approvals."
+    },
+    "gemma4:12b": {}
+  }
+}
