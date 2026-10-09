@@ -51,19 +51,25 @@ class RAGPipeline:
 
         self.retriever = DocumentRetriever()
 
+        model_family = self.model_name.split(":")[0]
         model_options = {}
+        output_limit = 400
 
-        if self.model_name.split(":")[0] == "qwen3":
+        if model_family == "qwen3":
             model_options["reasoning"] = False
+
+        elif model_family == "deepseek-r1":
+            model_options["reasoning"] = True
+            output_limit = 1200
 
         self.llm = ChatOllama(
             model=self.model_name,
             base_url=settings.ollama_url,
             temperature=0,
             num_ctx=4096,
-            num_predict=400,
+            num_predict=output_limit,
             keep_alive="5m",
-            client_kwargs={"timeout": 300.0},
+            client_kwargs={"timeout": 600.0},
             **model_options,
         )
 
@@ -118,6 +124,15 @@ class RAGPipeline:
                 SystemMessage(content=SYSTEM_PROMPT),
                 HumanMessage(content=user_prompt),
             ]
+        )
+
+        print(
+            "Response model:",
+            message.response_metadata.get("model"),
+        )
+        print(
+            "Reasoning returned:",
+            bool(message.additional_kwargs.get("reasoning_content")),
         )
 
         generation_seconds = perf_counter() - generation_start
