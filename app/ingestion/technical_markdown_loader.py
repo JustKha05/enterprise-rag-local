@@ -17,7 +17,11 @@ ATTRIBUTE_PATTERN = re.compile(
 )
 
 
-def clean_hugo_markdown(content: str) -> tuple[str, list[str]]:
+def clean_hugo_markdown(
+    content: str,
+    code_samples: dict[str, str],
+    feature_states: dict[str, str],
+) -> tuple[str, list[str]]:
     unresolved = []
 
     def replace_shortcode(match: re.Match) -> str:
@@ -31,12 +35,42 @@ def clean_hugo_markdown(content: str) -> tuple[str, list[str]]:
                 attributes.get("term_id", "").replace("-", " "),
             )
 
-        # Remove wrappers while keeping the text between them.
         if name.lstrip("/") in {"note", "warning", "caution"}:
             return "\n"
 
-        # Other shortcodes may insert external content.
-        # Keep a visible marker instead of silently deleting them.
+        if name in {"tabs", "/tabs", "/tab"}:
+            return "\n"
+
+        if name == "tab":
+            return f"\n### {attributes.get('name', 'Example')}\n"
+
+        if name == "heading":
+            if '"whatsnext"' in expression:
+                return "\n## What's next\n"
+
+        if name == "api-reference":
+            page = attributes.get("page")
+
+            if page:
+                return (
+                    "\nAPI reference: "
+                    f"https://kubernetes.io/docs/reference/"
+                    f"kubernetes-api/{page}/\n"
+                )
+
+        if name == "code_sample":
+            sample_path = attributes.get("file")
+
+            if sample_path in code_samples:
+                sample = code_samples[sample_path].rstrip()
+                return f"\n```yaml\n{sample}\n```\n"
+
+        if name == "feature-state":
+            feature_name = attributes.get("feature_gate_name")
+
+            if feature_name in feature_states:
+                return f"\n{feature_states[feature_name]}\n"
+
         unresolved.append(expression)
         return f"\n[UNRESOLVED HUGO SHORTCODE: {expression}]\n"
 
@@ -83,7 +117,72 @@ def load_technical_markdown(
         raise ValueError("Markdown hash does not match source metadata")
 
     post = frontmatter.loads(raw_bytes.decode("utf-8-sig"))
-    content, unresolved = clean_hugo_markdown(post.content)
+    sample_path = markdown_path.parent / "nginx-deployment.yaml"
+
+    code_samples = {}
+
+    if sample_path.is_file():
+        sample_bytes = sample_path.read_bytes()
+
+        code_samples["controllers/nginx-deployment.yaml"] = (
+            sample_bytes.decode("utf-8-sig")
+        )
+
+        metadata["code_sample_sha256"] = hashlib.sha256(
+            sample_bytes
+        ).hexdigest()
+
+    feature_states = {}
+    feature_path = (
+        markdown_path.parent
+        / "DeploymentReplicaSetTerminatingReplicas.md"
+    )
+
+    if feature_path.is_file():
+        feature_bytes = feature_path.read_bytes()
+        feature_post = frontmatter.loads(
+            feature_bytes.decode("utf-8-sig")
+        )
+
+        feature_name = feature_post.metadata["title"]
+        stage_lines = []
+
+        for stage in feature_post.metadata["stages"]:
+            enabled = stage["defaultValue"]
+
+            if not isinstance(enabled, bool):
+                raise ValueError("Feature defaultValue must be boolean")
+
+            start_version = str(stage["fromVersion"])
+            end_version = stage.get("toVersion")
+
+            version_range = (
+                f"Kubernetes {start_version} through {end_version}"
+                if end_version is not None
+                else f"Kubernetes {start_version} onward in this snapshot"
+            )
+
+            stage_lines.append(
+                f"- {version_range}: {stage['stage']}; "
+                f"enabled by default: {str(enabled).lower()}."
+            )
+
+        feature_states[feature_name] = (
+            f"Feature gate: {feature_name}\n"
+            + "\n".join(stage_lines)
+            + "\n"
+            + feature_post.content.strip()
+        )
+
+        metadata["feature_gate_sha256"] = hashlib.sha256(
+            feature_bytes
+        ).hexdigest()
+
+    content, unresolved = clean_hugo_markdown(
+        post.content,
+        code_samples=code_samples,
+        feature_states=feature_states,
+    )
 
     if not content:
         raise ValueError("Document content is empty")
