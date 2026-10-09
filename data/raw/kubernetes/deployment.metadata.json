@@ -1,0 +1,16 @@
+﻿{
+    "source_url":  "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/",
+    "version":  "e96866675691ab050bc2f5dffc19f21f9fc8c646",
+    "raw_source_url":  "https://raw.githubusercontent.com/kubernetes/website/e96866675691ab050bc2f5dffc19f21f9fc8c646/content/en/docs/concepts/workloads/controllers/deployment.md",
+    "language":  "en",
+    "source_type":  "official",
+    "title":  "Kubernetes Deployments",
+    "document_id":  "K8S-DEPLOYMENT",
+    "downloaded_at":  "2026-10-09T20:09:51.1993742Z",
+    "status":  "active",
+    "sha256":  "ca4571585f3af4039292fdbbe127e296e1b86d44b4df52cec75dbf51c96da513",
+    "publisher":  "Kubernetes",
+    "department":  "engineering",
+    "source_commit":  "e96866675691ab050bc2f5dffc19f21f9fc8c646",
+    "document_type":  "technical_documentation"
+}
