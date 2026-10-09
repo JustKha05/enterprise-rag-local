@@ -26,6 +26,18 @@ Answer briefly in the language of the question.
 
 Only when none of the excerpts provides the requested information, say:
 "The provided documents do not contain enough information to answer."
+
+For questions asking who, what, or which items are required:
+- Include all applicable requirements stated in the excerpts.
+- Words such as "also" and "in addition" add requirements;
+  they do not replace earlier requirements.
+- Combine related statements when they describe the same process.
+
+For questions about multiple processes:
+- Answer each process separately.
+- Keep each role or requirement attached to its stated process.
+- Do not transfer requirements from one process to another.
+- Cite the supporting excerpt for each part of the answer.
 """.strip()
 
 
