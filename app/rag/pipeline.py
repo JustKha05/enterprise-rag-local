@@ -55,7 +55,7 @@ class RAGPipeline:
         model_options = {}
         output_limit = 400
 
-        if model_family == "qwen3":
+        if model_family in {"qwen3", "gemma4"}:
             model_options["reasoning"] = False
 
         elif model_family == "deepseek-r1":
