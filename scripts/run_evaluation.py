@@ -18,15 +18,23 @@ def main() -> None:
     )
     parser.add_argument("--model", required=True)
     parser.add_argument("--output", required=True)
+    parser.add_argument(
+        "--evidence",
+        default="rag_dev_evidence.jsonl",
+    )
     args = parser.parse_args()
 
     project_root = Path(__file__).resolve().parents[1]
-    evidence_path = (
-        project_root
-        / "evaluation"
-        / "datasets"
-        / "rag_dev_evidence.jsonl"
-    )
+    datasets_dir = (
+        project_root / "evaluation" / "datasets"
+    ).resolve()
+
+    evidence_path = (datasets_dir / args.evidence).resolve()
+
+    if not evidence_path.is_relative_to(datasets_dir):
+        raise ValueError(
+            "Evidence must be inside evaluation/datasets"
+        )
 
     output_path = (
         project_root / "evaluation" / "results" / args.output

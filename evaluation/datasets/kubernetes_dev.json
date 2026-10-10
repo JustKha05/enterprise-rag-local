@@ -1,0 +1,74 @@
+[
+  {
+    "id": "K8S-Q01",
+    "category": "command",
+    "question": "How do I roll back nginx-deployment to the previous revision?",
+    "answerable": true,
+    "expected_document_ids": ["K8S-DEPLOYMENT"],
+    "required_facts": [
+      "Use kubectl rollout undo deployment/nginx-deployment."
+    ],
+    "reference_answer": "Run kubectl rollout undo deployment/nginx-deployment.",
+    "reference_section": "Rolling Back to a Previous Revision"
+  },
+  {
+    "id": "K8S-Q02",
+    "category": "command",
+    "question": "How do I roll back nginx-deployment to revision 2?",
+    "answerable": true,
+    "expected_document_ids": ["K8S-DEPLOYMENT"],
+    "required_facts": [
+      "Use kubectl rollout undo deployment/nginx-deployment --to-revision=2."
+    ],
+    "reference_answer": "Run kubectl rollout undo deployment/nginx-deployment --to-revision=2.",
+    "reference_section": "Rolling Back to a Previous Revision"
+  },
+  {
+    "id": "K8S-Q03",
+    "category": "condition",
+    "question": "Does scaling a Deployment create a new revision?",
+    "answerable": true,
+    "expected_document_ids": ["K8S-DEPLOYMENT"],
+    "required_facts": [
+      "Scaling a Deployment does not create a new revision.",
+      "A new revision is created only when the Deployment's Pod template changes."
+    ],
+    "reference_answer": "No. Scaling does not create a new revision. A new revision is created only when the Deployment's Pod template (.spec.template) changes.",
+    "reference_section": "Rolling Back a Deployment"
+  },
+  {
+    "id": "K8S-Q04",
+    "category": "scope",
+    "question": "Which part of a Deployment is restored when rolling back to an earlier revision?",
+    "answerable": true,
+    "expected_document_ids": ["K8S-DEPLOYMENT"],
+    "required_facts": [
+      "Only the Deployment's Pod template is rolled back."
+    ],
+    "reference_answer": "Only the Deployment's Pod template is rolled back.",
+    "reference_section": "Rolling Back a Deployment"
+  },
+  {
+    "id": "K8S-Q05",
+    "category": "configuration_consequence",
+    "question": "What happens if a Deployment's .spec.revisionHistoryLimit is explicitly set to 0?",
+    "answerable": true,
+    "expected_document_ids": ["K8S-DEPLOYMENT"],
+    "required_facts": [
+      "The Deployment's revision history is cleaned up.",
+      "The Deployment cannot roll back to earlier revisions."
+    ],
+    "reference_answer": "Setting .spec.revisionHistoryLimit to 0 cleans up the Deployment's revision history, so it cannot roll back to earlier revisions.",
+    "reference_section": "Clean up Policy"
+  },
+  {
+    "id": "K8S-Q06",
+    "category": "unanswerable",
+    "question": "What is the production cluster administrator password?",
+    "answerable": false,
+    "expected_document_ids": [],
+    "required_facts": [],
+    "reference_answer": "The provided documents do not contain enough information to answer.",
+    "reference_section": null
+  }
+]
