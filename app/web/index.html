@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enterprise RAG — Document Assistant</title>
+  <style>
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      background: white;
+      font: inherit;
+      color: #17243b;
+    }
+    select:focus { outline: 2px solid #375cbd; }
+
+    :root {
+      font-family: system-ui, sans-serif;
+      color: #17243b;
+      background: #f3f6fb;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 880px; margin: 48px auto; padding: 0 20px; }
+    .badge { color: #375cbd; font-weight: 700; font-size: 13px; }
+    h1 { font-size: clamp(28px, 5vw, 40px); margin: 12px 0; }
+    .muted { color: #64748b; line-height: 1.6; }
+    .card {
+      background: white; border: 1px solid #dfe6f0;
+      border-radius: 18px; padding: 24px; margin-top: 24px;
+      box-shadow: 0 8px 30px #17243b08;
+    }
+    label { display: block; font-weight: 650; margin-bottom: 12px; }
+    textarea {
+      width: 100%; min-height: 120px; resize: vertical;
+      padding: 14px; border: 1px solid #cbd5e1;
+      border-radius: 12px; font: inherit; line-height: 1.6;
+    }
+    textarea:focus { outline: 2px solid #375cbd; }
+    button {
+      cursor: pointer; font: inherit; border-radius: 10px;
+      padding: 11px 16px; border: 1px solid #dfe6f0;
+      background: #f8fafc; color: #17243b;
+    }
+    button:disabled { cursor: wait; opacity: .6; }
+    #send { background: #375cbd; color: white; border: 0; }
+    .examples, .actions {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px;
+    }
+    .examples button { font-size: 13px; }
+    #status { margin-top: 16px; }
+    #answer, .excerpt { white-space: pre-wrap; overflow-wrap: anywhere; }
+    #answer { line-height: 1.8; }
+    .excerpt {
+      background: #f8fafc; padding: 14px;
+      border-radius: 10px; font-size: 14px; line-height: 1.7;
+    }
+    details { border-top: 1px solid #e2e8f0; padding: 16px 0; }
+    summary { cursor: pointer; line-height: 1.6; }
+    a { color: #375cbd; }
+    [hidden] { display: none !important; }
+    @media (max-width: 600px) {
+      main { margin-top: 24px; }
+      .card { padding: 18px; }
+    }
+  .document-info {margin:20px 0 24px;padding:22px;border:1px solid #dfe6f0;border-radius:14px;background:#f8fafc}
+    .document-info h2 {margin:10px 0 20px;font-size:23px}
+    .document-info h3 {margin:20px 0 8px;font-size:15px}
+    .document-info p,.document-info li {line-height:1.7;color:#475569}
+    .document-info ul {padding-left:22px}
+    .metadata-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px;margin:0}
+    .metadata-grid dt {color:#64748b;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+    .metadata-grid dd {margin:5px 0 0;font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+    @media(max-width:600px){.metadata-grid{grid-template-columns:1fr}.document-info{padding:16px}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="badge">ENTERPRISE RAG · LOCAL</div>
+  <h1>Explore documents. Ask with context.</h1>
+  <p class="muted">
+    Explore NIST CSF 2.0 and Kubernetes Deployments documentation.
+    Choose a collection, review its coverage, and ask a question with source references.
+    Each question is processed independently.
+  </p>
+
+  <section class="card">
+    <form id="form">
+            <label for="dataset">Choose a document collection</label>
+      <select id="dataset">
+        <option value="nist">NIST Cybersecurity Framework 2.0</option>
+        <option value="kubernetes">Kubernetes Deployments</option>
+      </select>
+
+      <section class="document-info" aria-labelledby="document-heading">
+        <div class="badge">ABOUT THIS COLLECTION</div>
+        <h2 id="document-heading"></h2>
+        <dl id="document-metadata" class="metadata-grid"></dl>
+        <h3>Overview</h3><p id="document-overview"></p>
+        <h3>Topics you can explore</h3><ul id="document-topics"></ul>
+        <h3>Coverage and boundaries</h3><p id="document-coverage"></p>
+        <a id="dataset-link" target="_blank" rel="noopener noreferrer">Read the source document ↗</a>
+      </section>
+      <p class="muted">English questions are recommended. Retrieval in other languages has not been evaluated. Each question is processed independently.</p>
+      <label for="query">What would you like to know?</label>
+      <textarea id="query" maxlength="2000" required
+        placeholder="Example: What are the six Functions of the NIST Cybersecurity Framework?"></textarea>
+      <p class="muted">Try an example question:</p>
+      <div id="examples" class="examples"></div>
+      <div class="actions">
+        <button id="send" type="submit">Ask question</button>
+      </div>
+    </form>
+    <p id="status" class="muted" role="status" aria-live="polite"></p>
+  </section>
+
+  <section id="result" class="card" hidden>
+    <h2>Answer</h2>
+    <div id="answer"></div>
+    <p id="timing" class="muted"></p>
+    <h3>Retrieved document excerpts</h3>
+    <p class="muted">
+      Open the source matching a reference in the answer to inspect the evidence.
+      Retrieved excerpts are not necessarily all used in the answer.
+    </p>
+    <div id="sources"></div>
+  </section>
+</main>
+
+<script>
+  const form = document.querySelector("#form");
+  const query = document.querySelector("#query");
+  const send = document.querySelector("#send");
+  const status = document.querySelector("#status");
+  const result = document.querySelector("#result");
+  let busy = false;
+  const dataset = document.querySelector("#dataset");
+
+  const catalog = {
+  "nist": {
+    "title": "NIST Cybersecurity Framework 2.0",
+    "metadata": [
+      [
+        "Document name",
+        "The NIST Cybersecurity Framework (CSF) 2.0"
+      ],
+      [
+        "Version",
+        "CSF 2.0 · NIST CSWP 29"
+      ],
+      [
+        "Publication date",
+        "February 26, 2024"
+      ],
+      [
+        "Publisher",
+        "National Institute of Standards and Technology (NIST)"
+      ],
+      [
+        "Domain",
+        "Cybersecurity governance and risk management"
+      ],
+      [
+        "Source format",
+        "PDF · 32 pages"
+      ],
+      [
+        "Document language",
+        "English"
+      ],
+      [
+        "Intended audience",
+        "Security teams, risk managers, organizational leaders, and cybersecurity practitioners"
+      ]
+    ],
+    "overview": "A framework for understanding, assessing, prioritizing, and communicating cybersecurity risks. It organizes cybersecurity outcomes through the CSF Core and explains how organizations can use Profiles and Tiers to describe and improve their cybersecurity posture.",
+    "topics": [
+      "The six Functions: GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER",
+      "The CSF Core: Functions, Categories, and Subcategories",
+      "Current Profiles, Target Profiles, and Community Profiles",
+      "The four Tiers: Partial, Risk Informed, Repeatable, and Adaptive",
+      "Using Profiles to identify gaps and prioritize improvements",
+      "Informative References, Implementation Examples, and Quick Start Guides",
+      "Cybersecurity risk communication and integration with organizational risk management"
+    ],
+    "coverage": "This collection contains the CSF 2.0 publication. Linked websites and supplementary resources are not automatically included. The framework describes outcomes rather than prescribing a single implementation method. This collection does not contain your organization's private policies, credentials, budgets, or compliance assessment.",
+    "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf",
+    "examples": [
+      [
+        "Six Functions",
+        "What are the six Functions of the NIST Cybersecurity Framework 2.0?"
+      ],
+      [
+        "Current vs. Target Profile",
+        "What is the difference between a Current Profile and a Target Profile?"
+      ],
+      [
+        "Role of CSF Tiers",
+        "Should CSF Tiers replace an organization's cybersecurity risk management methodology?"
+      ]
+    ]
+  },
+  "kubernetes": {
+    "title": "Kubernetes Deployments",
+    "metadata": [
+      [
+        "Document name",
+        "Deployments"
+      ],
+      [
+        "Version",
+        "Pinned documentation snapshot"
+      ],
+      [
+        "Snapshot commit",
+        "e96866675691ab050bc2f5dffc19f21f9fc8c646"
+      ],
+      [
+        "Publisher",
+        "Kubernetes documentation project"
+      ],
+      [
+        "Domain",
+        "Container orchestration and application deployment"
+      ],
+      [
+        "Source format",
+        "Markdown with locally resolved examples and feature-state information"
+      ],
+      [
+        "Document language",
+        "English"
+      ],
+      [
+        "Intended audience",
+        "Developers, platform engineers, DevOps engineers, and Kubernetes operators"
+      ]
+    ],
+    "overview": "Technical documentation for managing application workloads with Kubernetes Deployments. It explains declarative updates to Pods and ReplicaSets, rolling updates, deployment revisions, and rollback procedures.",
+    "topics": [
+      "Creating and updating Deployments",
+      "Rolling updates and rollout status",
+      "Rolling back to a previous or specific revision",
+      "Pod template changes and revision creation",
+      "Scaling, pausing, and resuming Deployments",
+      "Deployment progress, failures, and status conditions",
+      "Revision history limits and cleanup of old ReplicaSets"
+    ],
+    "coverage": "This collection covers the Deployments documentation and its locally resolved supporting examples. It does not include the entire Kubernetes documentation or access to a live cluster. The snapshot commit identifies the source content; it is not a Kubernetes release version. Check version-specific behavior against the Kubernetes version running in your environment.",
+    "url": "https://github.com/kubernetes/website/blob/e96866675691ab050bc2f5dffc19f21f9fc8c646/content/en/docs/concepts/workloads/controllers/deployment.md",
+    "examples": [
+      [
+        "Previous revision",
+        "How do I roll back nginx-deployment to the previous revision?"
+      ],
+      [
+        "Specific revision",
+        "How do I roll back nginx-deployment to revision 2?"
+      ],
+      [
+        "Scaling and revisions",
+        "Does scaling a Deployment create a new revision?"
+      ]
+    ]
+  }
+};
+  function updateDataset() {
+    const selected = catalog[dataset.value];
+    document.querySelector("#document-heading").textContent = selected.title;
+    document.querySelector("#document-overview").textContent = selected.overview;
+    document.querySelector("#document-coverage").textContent = selected.coverage;
+    document.querySelector("#dataset-link").href = selected.url;
+    const metadata = document.querySelector("#document-metadata");
+    metadata.replaceChildren();
+    for (const [label,value] of selected.metadata) {
+      const group=document.createElement("div");
+      const term=document.createElement("dt");
+      const description=document.createElement("dd");
+      term.textContent=label; description.textContent=value;
+      group.append(term,description); metadata.append(group);
+    }
+    const topics=document.querySelector("#document-topics");
+    topics.replaceChildren();
+    for (const topic of selected.topics) {
+      const item=document.createElement("li"); item.textContent=topic; topics.append(item);
+    }
+    const examples=document.querySelector("#examples");
+    examples.replaceChildren();
+    for (const [label,question] of selected.examples) {
+      const button=document.createElement("button"); button.type="button";
+      button.textContent=label;
+      button.addEventListener("click",()=>{if(busy)return;query.value=question;query.focus();});
+      examples.append(button);
+    }
+    query.value=""; result.hidden=true; status.textContent="";
+  }
+
+  dataset.addEventListener("change", updateDataset);
+  updateDataset();
+
+  function renderSources(sources) {
+    const container = document.querySelector("#sources");
+    container.replaceChildren();
+
+    for (const source of sources) {
+      const details = document.createElement("details");
+      const summary = document.createElement("summary");
+      summary.textContent =
+        `[${source.label}] ${source.title || "Document"}` +
+        (source.pdf_page ? ` · PDF page ${source.pdf_page}` : "");
+      details.append(summary);
+
+      if (source.source_url) {
+        try {
+          const url = new URL(source.source_url);
+          if (["http:", "https:"].includes(url.protocol)) {
+            if (source.pdf_page) url.hash = `page=${source.pdf_page}`;
+            const link = document.createElement("a");
+            link.href = url.href;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = "Open source document";
+            const paragraph = document.createElement("p");
+            paragraph.append(link);
+            details.append(paragraph);
+          }
+        } catch {
+          // Keep the excerpt visible if its source URL is invalid.
+        }
+      }
+
+      const excerpt = document.createElement("div");
+      excerpt.className = "excerpt";
+      excerpt.textContent = source.content;
+      details.append(excerpt);
+      container.append(details);
+    }
+  }
+
+  form.addEventListener("submit", async event => {
+    event.preventDefault();
+    const question = query.value.trim();
+    if (!question || busy) return;
+
+    busy = true;
+    send.disabled = true;
+    query.disabled = true;
+    dataset.disabled = true;    
+    result.hidden = true;
+
+    const started = Date.now();
+    const updateStatus = () => {
+      const seconds = Math.floor((Date.now() - started) / 1000);
+      status.textContent =
+        `Finding evidence and generating an answer… ${seconds}s elapsed. ` +
+        "Local CPU processing may take several minutes.";
+    };
+    updateStatus();
+    const timer = setInterval(updateStatus, 1000);
+
+    try {
+      const response = await fetch("/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          query: question,
+          dataset: dataset.value,
+          top_k: 6
+        })
+      });
+
+      if (!response.ok) {
+        if (response.status === 503) {
+          throw new Error("Another question is being processed. Please try again later.");
+        }
+        throw new Error(`Could not process the question (HTTP ${response.status}).`);
+      }
+
+      const data = await response.json();
+      document.querySelector("#answer").textContent = data.answer;
+      document.querySelector("#timing").textContent =
+        `Collection: ${catalog[data.dataset].title} · ` +
+        `Model: ${data.model} · ` +
+        `Retrieval: ${data.retrieval_seconds.toFixed(1)}s · ` +
+        `Generation: ${data.generation_seconds.toFixed(1)}s`;
+      renderSources(data.sources);
+      result.hidden = false;
+      clearInterval(timer);
+      status.textContent = data.done_reason === "length"
+        ? "The answer reached the output limit and may be incomplete."
+        : "Answer received. Review the source excerpts below.";
+    } catch (error) {
+      clearInterval(timer);
+      status.textContent = error.message || "Could not connect to the API.";
+    } finally {
+      clearInterval(timer);
+      busy = false;
+      send.disabled = false;
+      query.disabled = false;
+      dataset.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>

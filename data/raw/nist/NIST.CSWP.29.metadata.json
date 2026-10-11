@@ -1,0 +1,15 @@
+﻿{
+    "source_url":  "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf",
+    "version":  "2.0",
+    "language":  "en",
+    "source_type":  "official",
+    "publication_date":  "2024-02-26",
+    "title":  "The NIST Cybersecurity Framework (CSF) 2.0",
+    "document_id":  "NIST-CSWP-29",
+    "downloaded_at":  "2026-10-09T19:30:58.2618470Z",
+    "status":  "active",
+    "sha256":  "3c31f46fee98cac0c4323453e5109291a213b4de7fef8c058af9bf67f717433c",
+    "publisher":  "NIST",
+    "department":  "security",
+    "document_type":  "framework"
+}

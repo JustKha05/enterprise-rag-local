@@ -58,6 +58,10 @@ def main() -> None:
             )
             print(f"  Chunk: {metadata['chunk_id']}")
             print(f"  Source: {metadata['source']}")
+
+            if "pdf_page" in metadata:
+                print(f"  PDF page: {metadata['pdf_page']}")
+
             print(f"  Retrieval score: {result.score:.4f}")
 
         print()

@@ -5,16 +5,36 @@ from pathlib import Path
 from app.config import settings
 from app.retrieval.retriever import DocumentRetriever
 
+import argparse
 
 def main() -> None:
-    project_root = Path(__file__).resolve().parents[1]
+    parser = argparse.ArgumentParser(
+        description="Freeze retrieved evidence for an evaluation dataset"
+    )
+    parser.add_argument("--dataset", default="rag_dev.json")
+    parser.add_argument("--output", default="rag_dev_evidence.jsonl")
+    parser.add_argument("--top-k", type=int, default=3)
+    args = parser.parse_args()
 
-    dataset_path = (
-        project_root / "evaluation" / "datasets" / "rag_dev.json"
-    )
-    output_path = (
-        project_root / "evaluation" / "datasets" / "rag_dev_evidence.jsonl"
-    )
+    if args.top_k < 1:
+        parser.error("--top-k must be at least 1")
+
+    project_root = Path(__file__).resolve().parents[1]
+    datasets_dir = (
+        project_root / "evaluation" / "datasets"
+    ).resolve()
+
+    dataset_path = (datasets_dir / args.dataset).resolve()
+    output_path = (datasets_dir / args.output).resolve()
+
+    for path in (dataset_path, output_path):
+        if not path.is_relative_to(datasets_dir):
+            raise ValueError(
+                "Dataset and evidence must be inside evaluation/datasets"
+            )
+
+    if dataset_path == output_path:
+        raise ValueError("Dataset and output must be different files")
 
     dataset_bytes = dataset_path.read_bytes()
     questions = json.loads(dataset_bytes.decode("utf-8-sig"))
@@ -31,7 +51,7 @@ def main() -> None:
     if output_path.exists():
         raise FileExistsError(
             f"Evidence already exists: {output_path}\n"
-            "Use a new filename if you want a new evidence snapshot."
+            "U  se a new filename if you want a new evidence snapshot."
         )
 
     retriever = DocumentRetriever()
@@ -40,7 +60,10 @@ def main() -> None:
     try:
         for item in questions:
             question = item["question"]
-            results = retriever.retrieve(question, top_k=3)
+            results = retriever.retrieve(
+                question,
+                top_k=args.top_k,
+            )
 
             if not results:
                 raise ValueError(
@@ -65,7 +88,7 @@ def main() -> None:
                 "dataset_sha256": dataset_hash,
                 "collection_name": settings.collection_name,
                 "embedding_model": settings.embedding_model,
-                "top_k": 3,
+                "top_k": args.top_k,
                 "sources": sources,
             }
 
