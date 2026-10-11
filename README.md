@@ -26,11 +26,11 @@ Tài liệu synthetic được dùng cho các lượt kiểm thử phát triển
 
 ## Ngôn ngữ
 
-- Giao diện: tiếng Việt.
-- Tài liệu: tiếng Anh.
+- Giao diện web: tiếng Anh.
+- Tài liệu NIST và Kubernetes: tiếng Anh.
 - Câu hỏi tiếng Anh đã được kiểm thử.
-- Truy xuất với câu hỏi tiếng Việt chưa được đánh giá.
-- Model được yêu cầu trả lời theo ngôn ngữ câu hỏi.
+- Truy xuất với câu hỏi tiếng Việt và các ngôn ngữ khác chưa được đánh giá.
+- Model được yêu cầu trả lời theo ngôn ngữ câu hỏi; chất lượng ngoài tiếng Anh chưa được xác nhận.
 
 ## Kiến trúc
 
