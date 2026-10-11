@@ -56,12 +56,18 @@ class RAGPipeline:
             **model_options,
         )
 
-    def ask(self, query: str, top_k: int = 3) -> RAGResponse:
+    def ask(
+        self,
+        query: str,
+        top_k: int = 3,
+        collection_name: str | None = None,
+    ) -> RAGResponse:
         retrieval_start = perf_counter()
 
         results = self.retriever.retrieve(
             query=query,
             top_k=top_k,
+            collection_name=collection_name,
         )
 
         retrieval_seconds = perf_counter() - retrieval_start

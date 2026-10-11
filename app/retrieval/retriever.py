@@ -29,6 +29,7 @@ class DocumentRetriever:
         self,
         query: str,
         top_k: int = 3,
+        collection_name: str | None = None,
     ) -> list[RetrievalResult]:
         query = query.strip()
 
@@ -53,7 +54,11 @@ class DocumentRetriever:
         )
 
         response = self.client.query_points(
-            collection_name=settings.collection_name,
+            collection_name=(
+                collection_name
+                if collection_name is not None
+                else settings.collection_name
+            ),
             query=query_vector.tolist(),
             query_filter=models.Filter(
                 must=[
