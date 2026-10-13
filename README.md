@@ -8,7 +8,7 @@ inference trả phí.
 
 ## Tính năng
 
-- Giao diện web bằng tiếng Việt.
+- Giao diện web bằng tiếng Anh.
 - Chọn NIST CSF 2.0 hoặc Kubernetes Deployments.
 - Truy xuất tài liệu và tạo câu trả lời có nhãn nguồn.
 - Xem nội dung nguồn, liên kết gốc và số trang PDF.
@@ -51,7 +51,7 @@ Embedding: `sentence-transformers/all-MiniLM-L6-v2`,
 
 Model được chọn khi khởi động server qua `GENERATION_MODEL`.
 
-## Đánh giá NIST — lượt v2
+## Đánh giá NIST
 
 Sáu câu hỏi phát triển/model, cùng bằng chứng truy xuất `top-k=6`
 và cùng nội dung prompt.
@@ -74,6 +74,34 @@ Máy đánh giá: Windows, RAM 15,7 GB, inference bằng CPU.
 
 Đây là kết quả phát triển trên bộ nhỏ, không phải benchmark độc lập.
 Chưa công bố accuracy tổng hợp hoặc memory benchmark.
+
+## Đánh giá Kubernetes
+
+Sáu câu hỏi phát triển/model, sử dụng cùng bộ bằng chứng truy xuất
+được lưu cố định với `top-k=3`.
+
+Các câu hỏi kiểm tra rollback, revision, scaling, phạm vi được khôi phục,
+revision history và khả năng từ chối khi tài liệu không chứa đáp án.
+
+| Model | Trung bình/câu | Tổng thời gian 6 câu | Vấn đề quan sát được |
+|---|---:|---:|---|
+| Phi | 35,23 giây | 3,52 phút | Q03 từ chối sai; Q05 thiếu điều kiện và citation chưa đầy đủ |
+| Qwen | 86,82 giây | 8,68 phút | Q01 thêm khẳng định chưa được nguồn hỗ trợ; Q04 thiếu ý “chỉ Pod template” |
+| DeepSeek | 175,59 giây | 17,56 phút | Q01 thiếu tên Deployment trong lệnh; Q03 và Q05 thiếu điều kiện |
+| Gemma | 244,44 giây | 24,44 phút | Q03 thiếu điều kiện tạo revision; Q01–Q02 lỗi đóng khối Markdown |
+
+Cả bốn model từ chối đúng câu hỏi về mật khẩu administrator
+không có trong tài liệu.
+
+Tổng thời gian gọi model của lượt Kubernetes v1: khoảng 0,90 giờ.
+
+Kubernetes v1 dùng `top-k=3`, còn NIST v2 dùng `top-k=6`.
+Các lượt có thể khác phiên bản prompt; không dùng chênh lệch thời gian
+giữa hai bộ để kết luận trực tiếp về độ khó của tài liệu.
+
+Đây là đánh giá phát triển trên bộ câu hỏi nhỏ.
+Độ đúng nội dung, độ đầy đủ, citation và định dạng được xem xét riêng;
+chưa công bố điểm accuracy tổng hợp.
 
 ## Cài đặt
 
