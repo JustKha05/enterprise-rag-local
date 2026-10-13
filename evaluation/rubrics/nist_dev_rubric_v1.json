@@ -1,0 +1,89 @@
+[
+  {
+    "id": "NIST-Q01",
+    "category": "complete_list",
+    "question": "What are the six Functions of the NIST Cybersecurity Framework 2.0?",
+    "answerable": true,
+    "expected_document_ids": ["NIST-CSWP-29"],
+    "required_facts": [
+      "GOVERN.",
+      "IDENTIFY.",
+      "PROTECT.",
+      "DETECT.",
+      "RESPOND.",
+      "RECOVER."
+    ],
+    "reference_answer": "The six Functions are GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER.",
+    "reference_pdf_pages": [8],
+    "reference_section": "Introduction to the CSF Core"
+  },
+  {
+    "id": "NIST-Q02",
+    "category": "comparison",
+    "question": "What is the difference between a Current Profile and a Target Profile?",
+    "answerable": true,
+    "expected_document_ids": ["NIST-CSWP-29"],
+    "required_facts": [
+      "A Current Profile specifies Core outcomes currently achieved or attempted.",
+      "A Current Profile characterizes how or to what extent those outcomes are achieved.",
+      "A Target Profile specifies desired Core outcomes selected and prioritized to achieve cybersecurity risk management objectives."
+    ],
+    "reference_answer": "A Current Profile describes outcomes currently achieved or attempted and how or to what extent they are achieved. A Target Profile describes desired outcomes selected and prioritized to achieve cybersecurity risk management objectives.",
+    "reference_pdf_pages": [11],
+    "reference_section": "CSF Profiles"
+  },
+  {
+    "id": "NIST-Q03",
+    "category": "complete_list",
+    "question": "What are the four CSF Tiers and their names?",
+    "answerable": true,
+    "expected_document_ids": ["NIST-CSWP-29"],
+    "required_facts": [
+      "Tier 1: Partial.",
+      "Tier 2: Risk Informed.",
+      "Tier 3: Repeatable.",
+      "Tier 4: Adaptive."
+    ],
+    "reference_answer": "The four Tiers are Tier 1: Partial, Tier 2: Risk Informed, Tier 3: Repeatable, and Tier 4: Adaptive.",
+    "reference_pdf_pages": [12],
+    "reference_section": "CSF Tiers"
+  },
+  {
+    "id": "NIST-Q04",
+    "category": "scope",
+    "question": "Does the CSF prescribe how cybersecurity outcomes must be achieved?",
+    "answerable": true,
+    "expected_document_ids": ["NIST-CSWP-29"],
+    "required_facts": [
+      "The CSF does not prescribe how outcomes should be achieved.",
+      "It links to online resources with guidance on practices and controls that could achieve the outcomes."
+    ],
+    "reference_answer": "No. The CSF does not prescribe how outcomes should be achieved. It links to online resources with additional guidance on practices and controls that could achieve them.",
+    "reference_pdf_pages": [2],
+    "reference_section": "Abstract"
+  },
+  {
+    "id": "NIST-Q05",
+    "category": "relationship",
+    "question": "Should CSF Tiers replace an organization's cybersecurity risk management methodology?",
+    "answerable": true,
+    "expected_document_ids": ["NIST-CSWP-29"],
+    "required_facts": [
+      "Tiers should complement the organization's cybersecurity risk management methodology rather than replace it."
+    ],
+    "reference_answer": "No. Tiers should complement an organization's cybersecurity risk management methodology rather than replace it.",
+    "reference_pdf_pages": [13],
+    "reference_section": "CSF Tiers"
+  },
+  {
+    "id": "NIST-Q06",
+    "category": "unanswerable",
+    "question": "What is our organization's approved cybersecurity budget for 2026?",
+    "answerable": false,
+    "expected_document_ids": [],
+    "required_facts": [],
+    "reference_answer": "The provided documents do not contain enough information to answer.",
+    "reference_pdf_pages": [],
+    "reference_section": null
+  }
+]

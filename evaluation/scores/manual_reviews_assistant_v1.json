@@ -1,0 +1,3134 @@
+{
+  "schema_version": 1,
+  "reviews": [
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "phi4-mini_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q01",
+      "question": "What are the six Functions of the NIST Cybersecurity Framework 2.0?",
+      "answerable": true,
+      "answer": "A. The six Functions of the NIST Cybersecurity Framework 2.0 are GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER [S1].",
+      "generation_seconds": 102.29936319999979,
+      "run_status": "completed",
+      "required_facts": [
+        "GOVERN.",
+        "IDENTIFY.",
+        "PROTECT.",
+        "DETECT.",
+        "RESPOND.",
+        "RECOVER."
+      ],
+      "required_fact_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "GOVERN is a CSF Function",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "IDENTIFY is a CSF Function",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "PROTECT is a CSF Function",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "DETECT is a CSF Function",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "RESPOND is a CSF Function",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "RECOVER is a CSF Function",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": false,
+      "review_status": "completed",
+      "notes": "Six list items counted as six atomic claims; Phi prints prohibited A label.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "phi4-mini_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q02",
+      "question": "What is the difference between a Current Profile and a Target Profile?",
+      "answerable": true,
+      "answer": "A Current Profile specifies the Core outcomes that an organization is currently achieving (or attempting to achieve) and characterizes how or to what extent each outcome is being achieved [S1]. A Target Profile specifies the desired outcomes that an organization has selected and prioritized for achieving its cybersecurity risk management objectives. A Target Profile considers anticipated changes to the organization’s cybersecurity posture, such as new requirements, new technology adoption, and threat intelligence trends [S3].",
+      "generation_seconds": 113.36592640000163,
+      "run_status": "completed",
+      "required_facts": [
+        "A Current Profile specifies Core outcomes currently achieved or attempted.",
+        "A Current Profile characterizes how or to what extent those outcomes are achieved.",
+        "A Target Profile specifies desired Core outcomes selected and prioritized to achieve cybersecurity risk management objectives."
+      ],
+      "required_fact_scores": [
+        1,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Current Profile specifies outcomes currently achieved or attempted",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": false,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": false
+            }
+          ]
+        },
+        {
+          "text": "Current Profile characterizes how or to what extent outcomes are achieved",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": false,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": false
+            }
+          ]
+        },
+        {
+          "text": "Target Profile specifies desired outcomes selected and prioritized for risk management objectives",
+          "citations": [],
+          "supported_by_citations": false,
+          "citation_checks": []
+        },
+        {
+          "text": "Target Profile considers anticipated cybersecurity posture changes",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Anticipated changes include new requirements, new technology adoption and threat intelligence trends",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Current definition is absent from S1. Target definition sentence has no citation. Facts are supported elsewhere in supplied evidence.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "phi4-mini_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q03",
+      "question": "What are the four CSF Tiers and their names?",
+      "answerable": true,
+      "answer": "The four CSF Tiers and their names are: Partial (Tier 1), Risk Informed (Tier 2), Repeatable (Tier 3), and Adaptive (Tier 4) [S3].",
+      "generation_seconds": 59.678698200004874,
+      "run_status": "completed",
+      "required_facts": [
+        "Tier 1: Partial.",
+        "Tier 2: Risk Informed.",
+        "Tier 3: Repeatable.",
+        "Tier 4: Adaptive."
+      ],
+      "required_fact_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Tier 1 is Partial",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Tier 2 is Risk Informed",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Tier 3 is Repeatable",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Tier 4 is Adaptive",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "phi4-mini_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q04",
+      "question": "Does the CSF prescribe how cybersecurity outcomes must be achieved?",
+      "answerable": true,
+      "answer": "The CSF does not prescribe how cybersecurity outcomes must be achieved. [S1] [S2] [S3] [S4] [S5] [S6]",
+      "generation_seconds": 89.64649270000518,
+      "run_status": "completed",
+      "required_facts": [
+        "The CSF does not prescribe how outcomes should be achieved.",
+        "It links to online resources with guidance on practices and controls that could achieve the outcomes."
+      ],
+      "required_fact_scores": [
+        1,
+        0
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "CSF does not prescribe how outcomes are achieved",
+          "citations": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S2",
+              "supported": false
+            },
+            {
+              "source_label": "S3",
+              "supported": false
+            },
+            {
+              "source_label": "S4",
+              "supported": false
+            },
+            {
+              "source_label": "S5",
+              "supported": false
+            },
+            {
+              "source_label": "S6",
+              "supported": false
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Required fact 2 is absent. Only S1 directly supports the non-prescriptive claim.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "phi4-mini_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q05",
+      "question": "Should CSF Tiers replace an organization's cybersecurity risk management methodology?",
+      "answerable": true,
+      "answer": "B. If the evidence does not contain enough information to answer.",
+      "generation_seconds": 81.79192669998156,
+      "run_status": "completed",
+      "required_facts": [
+        "Tiers should complement the organization's cybersecurity risk management methodology rather than replace it."
+      ],
+      "required_fact_scores": [
+        0
+      ],
+      "unsupported_claims": [],
+      "refusal": "incorrect",
+      "claims": [],
+      "format_pass": false,
+      "review_status": "completed",
+      "notes": "False refusal despite S6; copies response mode B.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "phi4-mini_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q06",
+      "question": "What is our organization's approved cybersecurity budget for 2026?",
+      "answerable": false,
+      "answer": "The provided documents do not contain enough information to answer.",
+      "generation_seconds": 79.54263769998215,
+      "run_status": "completed",
+      "required_facts": [],
+      "required_fact_scores": [],
+      "unsupported_claims": [],
+      "refusal": "correct",
+      "claims": [],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Exact refusal; no factual answer claims requiring citations.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "qwen3_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q01",
+      "question": "What are the six Functions of the NIST Cybersecurity Framework 2.0?",
+      "answerable": true,
+      "answer": "The six Functions of the NIST Cybersecurity Framework 2.0 are GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER [S4].",
+      "generation_seconds": 241.65315880000708,
+      "run_status": "completed",
+      "required_facts": [
+        "GOVERN.",
+        "IDENTIFY.",
+        "PROTECT.",
+        "DETECT.",
+        "RESPOND.",
+        "RECOVER."
+      ],
+      "required_fact_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "GOVERN is a CSF Function",
+          "citations": [
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "IDENTIFY is a CSF Function",
+          "citations": [
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "PROTECT is a CSF Function",
+          "citations": [
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "DETECT is a CSF Function",
+          "citations": [
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "RESPOND is a CSF Function",
+          "citations": [
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "RECOVER is a CSF Function",
+          "citations": [
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Six list items counted as six atomic claims; Phi prints prohibited A label.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "qwen3_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q02",
+      "question": "What is the difference between a Current Profile and a Target Profile?",
+      "answerable": true,
+      "answer": "A Current Profile specifies the Core outcomes that an organization is currently achieving (or attempting to achieve) and characterizes how or to what extent each outcome is being achieved [S5]. A Target Profile specifies the desired outcomes that an organization has selected and prioritized for achieving its cybersecurity risk management objectives, and considers anticipated changes to the organization’s cybersecurity posture, such as new requirements, new technology adoption, and threat intelligence trends [S4].",
+      "generation_seconds": 237.19695529999444,
+      "run_status": "completed",
+      "required_facts": [
+        "A Current Profile specifies Core outcomes currently achieved or attempted.",
+        "A Current Profile characterizes how or to what extent those outcomes are achieved.",
+        "A Target Profile specifies desired Core outcomes selected and prioritized to achieve cybersecurity risk management objectives."
+      ],
+      "required_fact_scores": [
+        1,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Current Profile specifies outcomes currently achieved or attempted",
+          "citations": [
+            "S5"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S5",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Current Profile characterizes how or to what extent outcomes are achieved",
+          "citations": [
+            "S5"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S5",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Target Profile specifies desired outcomes selected and prioritized for risk management objectives",
+          "citations": [
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Target Profile considers anticipated cybersecurity posture changes",
+          "citations": [
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Anticipated changes include new requirements, new technology adoption and threat intelligence trends",
+          "citations": [
+            "S4"
+          ],
+          "supported_by_citations": false,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": false
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "S4 cuts off at such as new; full examples require S3.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "qwen3_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q03",
+      "question": "What are the four CSF Tiers and their names?",
+      "answerable": true,
+      "answer": "The four CSF Tiers are Partial (Tier 1), Risk Informed (Tier 2), Repeatable (Tier 3), and Adaptive (Tier 4) [S3].",
+      "generation_seconds": 116.85893380001653,
+      "run_status": "completed",
+      "required_facts": [
+        "Tier 1: Partial.",
+        "Tier 2: Risk Informed.",
+        "Tier 3: Repeatable.",
+        "Tier 4: Adaptive."
+      ],
+      "required_fact_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Tier 1 is Partial",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Tier 2 is Risk Informed",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Tier 3 is Repeatable",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Tier 4 is Adaptive",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "qwen3_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q04",
+      "question": "Does the CSF prescribe how cybersecurity outcomes must be achieved?",
+      "answerable": true,
+      "answer": "The CSF does not prescribe how cybersecurity outcomes must be achieved. It describes what desirable outcomes an organization can aspire to achieve but does not prescribe outcomes nor how they may be achieved [S1]. Descriptions of how an organization can achieve those outcomes are provided in a suite of online resources [S1].",
+      "generation_seconds": 203.28157500000088,
+      "run_status": "completed",
+      "required_facts": [
+        "The CSF does not prescribe how outcomes should be achieved.",
+        "It links to online resources with guidance on practices and controls that could achieve the outcomes."
+      ],
+      "required_fact_scores": [
+        1,
+        0
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "CSF does not prescribe how outcomes are achieved",
+          "citations": [],
+          "supported_by_citations": false,
+          "citation_checks": []
+        },
+        {
+          "text": "CSF describes desirable outcomes",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "CSF prescribes neither outcomes nor their achievement methods",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Descriptions of achieving outcomes are provided in online resources",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": false,
+      "review_status": "completed",
+      "notes": "Strict rubric fact 2 requires guidance on practices and controls; merely mentioning online resources earns 0. First factual sentence is uncited.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "qwen3_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q05",
+      "question": "Should CSF Tiers replace an organization's cybersecurity risk management methodology?",
+      "answerable": true,
+      "answer": "The CSF Tiers should complement an organization’s cybersecurity risk management methodology rather than replace it [S6].",
+      "generation_seconds": 175.07631229999242,
+      "run_status": "completed",
+      "required_facts": [
+        "Tiers should complement the organization's cybersecurity risk management methodology rather than replace it."
+      ],
+      "required_fact_scores": [
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Tiers complement the risk management methodology rather than replace it",
+          "citations": [
+            "S6"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S6",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "qwen3_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q06",
+      "question": "What is our organization's approved cybersecurity budget for 2026?",
+      "answerable": false,
+      "answer": "The provided documents do not contain enough information to answer.",
+      "generation_seconds": 174.1924633999879,
+      "run_status": "completed",
+      "required_facts": [],
+      "required_fact_scores": [],
+      "unsupported_claims": [],
+      "refusal": "correct",
+      "claims": [],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Exact refusal; no factual answer claims requiring citations.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "deepseek_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q01",
+      "question": "What are the six Functions of the NIST Cybersecurity Framework 2.0?",
+      "answerable": true,
+      "answer": "GOVERN [S1][S4], IDENTIFY [S1][S4], PROTECT [S1][S4], DETECT [S1][S4], RESPOND [S1][S4], RECOVER [S1][S4]",
+      "generation_seconds": 566.9966572000121,
+      "run_status": "completed",
+      "required_facts": [
+        "GOVERN.",
+        "IDENTIFY.",
+        "PROTECT.",
+        "DETECT.",
+        "RESPOND.",
+        "RECOVER."
+      ],
+      "required_fact_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "GOVERN is a CSF Function",
+          "citations": [
+            "S1",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "IDENTIFY is a CSF Function",
+          "citations": [
+            "S1",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "PROTECT is a CSF Function",
+          "citations": [
+            "S1",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "DETECT is a CSF Function",
+          "citations": [
+            "S1",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "RESPOND is a CSF Function",
+          "citations": [
+            "S1",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "RECOVER is a CSF Function",
+          "citations": [
+            "S1",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Six list items counted as six atomic claims; Phi prints prohibited A label.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "deepseek_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q02",
+      "question": "What is the difference between a Current Profile and a Target Profile?",
+      "answerable": true,
+      "answer": "The difference between a Current Profile and a Target Profile is defined as follows:\n\n*   A **Current Profile** specifies the Core outcomes an organization is currently achieving and characterizes how or to what extent each outcome is being achieved [S4].\n*   A **Target Profile** specifies the desired Core outcomes an organization has selected and prioritized for achieving its cybersecurity risk management objectives [S4].\n\nAdditionally, the Target Profile considers anticipated changes to the organization's cybersecurity posture [S4].",
+      "generation_seconds": 277.58034029998817,
+      "run_status": "completed",
+      "required_facts": [
+        "A Current Profile specifies Core outcomes currently achieved or attempted.",
+        "A Current Profile characterizes how or to what extent those outcomes are achieved.",
+        "A Target Profile specifies desired Core outcomes selected and prioritized to achieve cybersecurity risk management objectives."
+      ],
+      "required_fact_scores": [
+        0,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Current Profile specifies currently achieved outcomes",
+          "citations": [
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Current Profile characterizes how or to what extent outcomes are achieved",
+          "citations": [
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Target Profile specifies desired outcomes selected and prioritized for risk management objectives",
+          "citations": [
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Target Profile considers anticipated cybersecurity posture changes",
+          "citations": [
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "First required fact is binary and includes attempted outcomes; that qualification is omitted.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "deepseek_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q03",
+      "question": "What are the four CSF Tiers and their names?",
+      "answerable": true,
+      "answer": "The four CSF Tiers are Partial (Tier 1), Risk Informed (Tier 2), Repeatable (Tier 3), and Adaptive (Tier 4). [S3]",
+      "generation_seconds": 159.5169212000037,
+      "run_status": "completed",
+      "required_facts": [
+        "Tier 1: Partial.",
+        "Tier 2: Risk Informed.",
+        "Tier 3: Repeatable.",
+        "Tier 4: Adaptive."
+      ],
+      "required_fact_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Tier 1 is Partial",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Tier 2 is Risk Informed",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Tier 3 is Repeatable",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Tier 4 is Adaptive",
+          "citations": [
+            "S3"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "deepseek_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q04",
+      "question": "Does the CSF prescribe how cybersecurity outcomes must be achieved?",
+      "answerable": true,
+      "answer": "The CSF does not prescribe how cybersecurity outcomes must be achieved [S1][S2][S4][S6]. Descriptions of how an organization can achieve those outcomes are provided in a suite of online resources [S1].",
+      "generation_seconds": 248.10933770000702,
+      "run_status": "completed",
+      "required_facts": [
+        "The CSF does not prescribe how outcomes should be achieved.",
+        "It links to online resources with guidance on practices and controls that could achieve the outcomes."
+      ],
+      "required_fact_scores": [
+        1,
+        0
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "CSF does not prescribe how outcomes are achieved",
+          "citations": [
+            "S1",
+            "S2",
+            "S4",
+            "S6"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S2",
+              "supported": false
+            },
+            {
+              "source_label": "S4",
+              "supported": false
+            },
+            {
+              "source_label": "S6",
+              "supported": false
+            }
+          ]
+        },
+        {
+          "text": "Descriptions of achieving outcomes are provided in online resources",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Online resources mentioned without required practices/controls guidance. Extra labels do not directly support the first claim.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "deepseek_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q05",
+      "question": "Should CSF Tiers replace an organization's cybersecurity risk management methodology?",
+      "answerable": true,
+      "answer": "The CSF Tiers should complement an organization’s cybersecurity risk management methodology rather than replace it. [S6]",
+      "generation_seconds": 243.93614589999197,
+      "run_status": "completed",
+      "required_facts": [
+        "Tiers should complement the organization's cybersecurity risk management methodology rather than replace it."
+      ],
+      "required_fact_scores": [
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Tiers complement the risk management methodology rather than replace it",
+          "citations": [
+            "S6"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S6",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "deepseek_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q06",
+      "question": "What is our organization's approved cybersecurity budget for 2026?",
+      "answerable": false,
+      "answer": "The provided documents do not contain enough information to answer.",
+      "generation_seconds": 244.90782340001897,
+      "run_status": "completed",
+      "required_facts": [],
+      "required_fact_scores": [],
+      "unsupported_claims": [],
+      "refusal": "correct",
+      "claims": [],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Exact refusal; no factual answer claims requiring citations.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "gemma4_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q01",
+      "question": "What are the six Functions of the NIST Cybersecurity Framework 2.0?",
+      "answerable": true,
+      "answer": "The six Functions of the NIST Cybersecurity Framework (CSF) 2.0 are GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER [S1, S4].",
+      "generation_seconds": 464.9764843000157,
+      "run_status": "completed",
+      "required_facts": [
+        "GOVERN.",
+        "IDENTIFY.",
+        "PROTECT.",
+        "DETECT.",
+        "RESPOND.",
+        "RECOVER."
+      ],
+      "required_fact_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "GOVERN is a CSF Function",
+          "citations": [
+            "S1",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "IDENTIFY is a CSF Function",
+          "citations": [
+            "S1",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "PROTECT is a CSF Function",
+          "citations": [
+            "S1",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "DETECT is a CSF Function",
+          "citations": [
+            "S1",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "RESPOND is a CSF Function",
+          "citations": [
+            "S1",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "RECOVER is a CSF Function",
+          "citations": [
+            "S1",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Six list items counted as six atomic claims; Phi prints prohibited A label.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "gemma4_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q02",
+      "question": "What is the difference between a Current Profile and a Target Profile?",
+      "answerable": true,
+      "answer": "A Current Profile specifies the Core outcomes that an organization is currently achieving (or attempting to achieve) and characterizes how or to what extent each outcome is being achieved [S4, S5]. In contrast, a Target Profile specifies the desired outcomes that an organization has selected and prioritized for achieving its cybersecurity risk management objectives, considering anticipated changes to the organization’s cybersecurity posture such as new requirements, new technology adoption, and threat intelligence trends [S3, S4].\n\nAdditionally, a Current Profile can be used to document and communicate an organization’s cybersecurity capabilities and known opportunities for improvement with external stakeholders [S1]. A Target Profile can help express the organization’s cybersecurity risk management requirements and expectations to suppliers, partners, and other third parties as a target for those parties to achieve [S1, S6].",
+      "generation_seconds": 482.1068355999887,
+      "run_status": "completed",
+      "required_facts": [
+        "A Current Profile specifies Core outcomes currently achieved or attempted.",
+        "A Current Profile characterizes how or to what extent those outcomes are achieved.",
+        "A Target Profile specifies desired Core outcomes selected and prioritized to achieve cybersecurity risk management objectives."
+      ],
+      "required_fact_scores": [
+        1,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Current Profile specifies outcomes currently achieved or attempted",
+          "citations": [
+            "S4",
+            "S5"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            },
+            {
+              "source_label": "S5",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Current Profile characterizes how or to what extent outcomes are achieved",
+          "citations": [
+            "S4",
+            "S5"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S4",
+              "supported": true
+            },
+            {
+              "source_label": "S5",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Target Profile specifies desired outcomes selected and prioritized for risk management objectives",
+          "citations": [
+            "S3",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": false
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Target Profile considers anticipated cybersecurity posture changes",
+          "citations": [
+            "S3",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Anticipated changes include new requirements, new technology adoption and threat intelligence trends",
+          "citations": [
+            "S3",
+            "S4"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            },
+            {
+              "source_label": "S4",
+              "supported": false
+            }
+          ]
+        },
+        {
+          "text": "Current Profile communicates capabilities and improvement opportunities to external stakeholders",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Target Profile communicates requirements and expectations to third parties",
+          "citations": [
+            "S1",
+            "S6"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S6",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Atomic claims: S3 supplies examples, S4 supplies complete Target definition; redundant non-supporting links penalize precision, while combined sources cover each claim.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "gemma4_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q03",
+      "question": "What are the four CSF Tiers and their names?",
+      "answerable": true,
+      "answer": "The four CSF Tiers are:\n*   Partial (Tier 1) [S3, S5]\n*   Risk Informed (Tier 2) [S3, S5]\n*   Repeatable (Tier 3) [S3, S5]\n*   Adaptive (Tier 4) [S3, S5]",
+      "generation_seconds": 270.75127949999296,
+      "run_status": "completed",
+      "required_facts": [
+        "Tier 1: Partial.",
+        "Tier 2: Risk Informed.",
+        "Tier 3: Repeatable.",
+        "Tier 4: Adaptive."
+      ],
+      "required_fact_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Tier 1 is Partial",
+          "citations": [
+            "S3",
+            "S5"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            },
+            {
+              "source_label": "S5",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Tier 2 is Risk Informed",
+          "citations": [
+            "S3",
+            "S5"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            },
+            {
+              "source_label": "S5",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Tier 3 is Repeatable",
+          "citations": [
+            "S3",
+            "S5"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            },
+            {
+              "source_label": "S5",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Tier 4 is Adaptive",
+          "citations": [
+            "S3",
+            "S5"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S3",
+              "supported": true
+            },
+            {
+              "source_label": "S5",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "gemma4_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q04",
+      "question": "Does the CSF prescribe how cybersecurity outcomes must be achieved?",
+      "answerable": true,
+      "answer": "No, the CSF does not prescribe how outcomes may be achieved [S1]. It describes what desirable outcomes an organization can aspire to achieve, but it does not prescribe the outcomes themselves or the methods to achieve them [S1]. Specific actions taken to achieve an outcome will vary by organization, use case, and the individual responsible for those actions [S6]. Descriptions of how an organization can achieve those outcomes are provided in a suite of online resources that complement the CSF [S1].",
+      "generation_seconds": 470.91381919998094,
+      "run_status": "completed",
+      "required_facts": [
+        "The CSF does not prescribe how outcomes should be achieved.",
+        "It links to online resources with guidance on practices and controls that could achieve the outcomes."
+      ],
+      "required_fact_scores": [
+        1,
+        0
+      ],
+      "unsupported_claims": [
+        "Actions vary by the individual responsible for them."
+      ],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "CSF does not prescribe how outcomes are achieved",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "CSF describes desirable outcomes",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "CSF prescribes neither outcomes nor methods",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Actions vary by organization, use case and responsible individual",
+          "citations": [
+            "S6"
+          ],
+          "supported_by_citations": false,
+          "citation_checks": [
+            {
+              "source_label": "S6",
+              "supported": false
+            }
+          ]
+        },
+        {
+          "text": "Descriptions of achieving outcomes are provided in online resources complementing CSF",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Strict fact 2 requires practices/controls guidance. S6 says actions vary by organization/use case and responsible individual also varies; it does not say actions vary by individual.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "gemma4_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q05",
+      "question": "Should CSF Tiers replace an organization's cybersecurity risk management methodology?",
+      "answerable": true,
+      "answer": "No, CSF Tiers should complement an organization's cybersecurity risk management methodology rather than replace it [S6].",
+      "generation_seconds": 373.959093100013,
+      "run_status": "completed",
+      "required_facts": [
+        "Tiers should complement the organization's cybersecurity risk management methodology rather than replace it."
+      ],
+      "required_fact_scores": [
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Tiers complement the risk management methodology rather than replace it",
+          "citations": [
+            "S6"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S6",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "nist",
+      "rubric_file": "nist_dev_rubric_v1.json",
+      "evidence_file": "nist_dev_evidence_v2.jsonl",
+      "result_file": "gemma4_nist_dev_run2.jsonl",
+      "question_id": "NIST-Q06",
+      "question": "What is our organization's approved cybersecurity budget for 2026?",
+      "answerable": false,
+      "answer": "The provided documents do not contain enough information to answer.",
+      "generation_seconds": 333.11158170001,
+      "run_status": "completed",
+      "required_facts": [],
+      "required_fact_scores": [],
+      "unsupported_claims": [],
+      "refusal": "correct",
+      "claims": [],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Exact refusal; no factual answer claims requiring citations.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "f12dc6feb98866b20171b521facea160edaec84689d1e108abf47fc037f73a88"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "phi4-mini_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q01",
+      "question": "How do I roll back nginx-deployment to the previous revision?",
+      "answerable": true,
+      "answer": "To roll back nginx-deployment to the previous revision, execute the following command:\n```shell\nkubectl rollout undo deployment/nginx-deployment\n```\nor specify a revision:\n```shell\nkubectl rollout undo deployment/nginx-deployment --to-revision=2\n```\n[Support: S1]",
+      "generation_seconds": 62.60895729999902,
+      "run_status": "completed",
+      "required_facts": [
+        "Use kubectl rollout undo deployment/nginx-deployment."
+      ],
+      "required_fact_scores": [
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Run kubectl rollout undo deployment/nginx-deployment to restore the previous revision",
+          "citations": [],
+          "supported_by_citations": false,
+          "citation_checks": []
+        },
+        {
+          "text": "Run kubectl rollout undo deployment/nginx-deployment --to-revision=2 to select revision 2",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": false,
+      "review_status": "completed",
+      "notes": "Support:S1 is recognized as a semantic citation, but is placed after the second command only; first command has no local citation. Noncanonical citation format.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "phi4-mini_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q02",
+      "question": "How do I roll back nginx-deployment to revision 2?",
+      "answerable": true,
+      "answer": "To roll back nginx-deployment to revision 2, execute the following command:\n```shell\nkubectl rollout undo deployment/nginx-deployment --to-revision=2\n```\n[Source: S1]",
+      "generation_seconds": 32.03906279999501,
+      "run_status": "completed",
+      "required_facts": [
+        "Use kubectl rollout undo deployment/nginx-deployment --to-revision=2."
+      ],
+      "required_fact_scores": [
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Run kubectl rollout undo deployment/nginx-deployment --to-revision=2 to select revision 2",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": false,
+      "review_status": "completed",
+      "notes": "Source:S1 recognized semantically, but fails canonical [S1] formatting.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "phi4-mini_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q03",
+      "question": "Does scaling a Deployment create a new revision?",
+      "answerable": true,
+      "answer": "The provided documents do not contain enough information to answer.",
+      "generation_seconds": 28.90811830000166,
+      "run_status": "completed",
+      "required_facts": [
+        "Scaling a Deployment does not create a new revision.",
+        "A new revision is created only when the Deployment's Pod template changes."
+      ],
+      "required_fact_scores": [
+        0,
+        0
+      ],
+      "unsupported_claims": [],
+      "refusal": "incorrect",
+      "claims": [],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "False refusal despite direct S1 evidence.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "phi4-mini_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q04",
+      "question": "Which part of a Deployment is restored when rolling back to an earlier revision?",
+      "answerable": true,
+      "answer": "When rolling back to an earlier revision, only the Deployment's Pod template part is rolled back [S1].",
+      "generation_seconds": 27.759401499992236,
+      "run_status": "completed",
+      "required_facts": [
+        "Only the Deployment's Pod template is rolled back."
+      ],
+      "required_fact_scores": [
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Only the Deployment Pod template is rolled back",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "phi4-mini_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q05",
+      "question": "What happens if a Deployment's .spec.revisionHistoryLimit is explicitly set to 0?",
+      "answerable": true,
+      "answer": "If a Deployment's .spec.revisionHistoryLimit is explicitly set to 0, all old ReplicaSets with 0 replicas will be cleaned up, and a new Deployment rollout cannot be undone since its revision history is cleaned up. [S1]",
+      "generation_seconds": 37.871264599991264,
+      "run_status": "completed",
+      "required_facts": [
+        "Old ReplicaSets with zero replicas are cleaned up.",
+        "Cleanup occurs after the Deployment reaches a complete state.",
+        "Removing the retained revision history prevents rollback to those earlier revisions."
+      ],
+      "required_fact_scores": [
+        1,
+        0,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Old ReplicaSets with zero replicas are cleaned up",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": false,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": false
+            }
+          ]
+        },
+        {
+          "text": "Rollback to removed revisions is no longer available",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Revision history is cleaned up",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Missing complete-state condition. Zero-replica qualification is supported by S2, not cited S1.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "phi4-mini_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q06",
+      "question": "What is the production cluster administrator password?",
+      "answerable": false,
+      "answer": "The provided documents do not contain enough information to answer.",
+      "generation_seconds": 22.190520000003744,
+      "run_status": "completed",
+      "required_facts": [],
+      "required_fact_scores": [],
+      "unsupported_claims": [],
+      "refusal": "correct",
+      "claims": [],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Exact refusal; no factual answer claims requiring citations.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "qwen3_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q01",
+      "question": "How do I roll back nginx-deployment to the previous revision?",
+      "answerable": true,
+      "answer": "To roll back nginx-deployment to the previous revision, use the command:\n```shell\nkubectl rollout undo deployment/nginx-deployment\n```\nThis rolls back the Deployment to the previous revision [S1].\n\nAlternatively, you can rollback to a specific revision by specifying it with `--to-revision`:\n```shell\nkubectl rollout undo deployment/nginx-deployment --to-revision=2\n```\nThis rolls back the Deployment to the specified revision [S1].\n\nAfter rolling back, check if the rollback was successful and the Deployment is running as expected by running:\n```shell\nkubectl get deployment nginx-deployment\n```\nThis ensures the rollback was successful [S2].",
+      "generation_seconds": 132.3377310999931,
+      "run_status": "completed",
+      "required_facts": [
+        "Use kubectl rollout undo deployment/nginx-deployment."
+      ],
+      "required_fact_scores": [
+        1
+      ],
+      "unsupported_claims": [
+        "Running a status inspection command guarantees rollback success."
+      ],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Run kubectl rollout undo deployment/nginx-deployment to restore the previous revision",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Run kubectl rollout undo deployment/nginx-deployment --to-revision=2 to select revision 2",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Run kubectl get deployment nginx-deployment to inspect rollback success",
+          "citations": [
+            "S2"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S2",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Running kubectl get deployment ensures rollback was successful",
+          "citations": [
+            "S2"
+          ],
+          "supported_by_citations": false,
+          "citation_checks": [
+            {
+              "source_label": "S2",
+              "supported": false
+            }
+          ]
+        }
+      ],
+      "format_pass": false,
+      "review_status": "completed",
+      "notes": "Status inspection does not guarantee success; command citations occur after explanatory sentences, not immediately after blocks.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "qwen3_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q02",
+      "question": "How do I roll back nginx-deployment to revision 2?",
+      "answerable": true,
+      "answer": "To roll back `nginx-deployment` to revision 2, run the following command:\n```shell\nkubectl rollout undo deployment/nginx-deployment --to-revision=2\n```\n[S1]\n\nCheck if the rollback was successful by running:\n```shell\nkubectl get deployment nginx-deployment\n```\n[S2]",
+      "generation_seconds": 77.20471130000078,
+      "run_status": "completed",
+      "required_facts": [
+        "Use kubectl rollout undo deployment/nginx-deployment --to-revision=2."
+      ],
+      "required_fact_scores": [
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Run kubectl rollout undo deployment/nginx-deployment --to-revision=2 to select revision 2",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Run kubectl get deployment nginx-deployment to inspect rollback success",
+          "citations": [
+            "S2"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S2",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "qwen3_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q03",
+      "question": "Does scaling a Deployment create a new revision?",
+      "answerable": true,
+      "answer": "Scaling a Deployment does not create a new revision. A new revision is created only if the Deployment's Pod template (`.spec.template`) is changed, such as updating the labels or container images [S1]. Other updates, such as scaling the Deployment, do not create a Deployment revision [S1].",
+      "generation_seconds": 92.97733559999324,
+      "run_status": "completed",
+      "required_facts": [
+        "Scaling a Deployment does not create a new revision.",
+        "A new revision is created only when the Deployment's Pod template changes."
+      ],
+      "required_fact_scores": [
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Scaling does not create a Deployment revision",
+          "citations": [],
+          "supported_by_citations": false,
+          "citation_checks": []
+        },
+        {
+          "text": "New revision is created only when the Pod template changes",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Labels and container images are examples of Pod template changes",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Scaling does not create a Deployment revision",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": false,
+      "review_status": "completed",
+      "notes": "First factual sentence lacks its own citation; later repetition is cited.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "qwen3_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q04",
+      "question": "Which part of a Deployment is restored when rolling back to an earlier revision?",
+      "answerable": true,
+      "answer": "When rolling back to an earlier revision, the Deployment's Pod template part is restored [S1].",
+      "generation_seconds": 60.47985119999794,
+      "run_status": "completed",
+      "required_facts": [
+        "Only the Deployment's Pod template is rolled back."
+      ],
+      "required_fact_scores": [
+        0
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Deployment Pod template is restored during rollback",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Fails strict required only qualification; positive Pod-template statement itself is supported.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "qwen3_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q05",
+      "question": "What happens if a Deployment's .spec.revisionHistoryLimit is explicitly set to 0?",
+      "answerable": true,
+      "answer": "Setting a Deployment's `.spec.revisionHistoryLimit` to 0 will result in cleaning up all the history of your Deployment, thus that Deployment will not be able to roll back [S1]. The cleanup only starts **after** a Deployment reaches a complete state [S1]. Even with a non-zero revision history limit, you can have more ReplicaSets than the limit you configure [S1]. Setting this field to zero means that all old ReplicaSets with 0 replicas will be cleaned up [S2]. In this case, a new Deployment rollout cannot be undone, since its revision history is cleaned up [S2].",
+      "generation_seconds": 107.80867689999286,
+      "run_status": "completed",
+      "required_facts": [
+        "Old ReplicaSets with zero replicas are cleaned up.",
+        "Cleanup occurs after the Deployment reaches a complete state.",
+        "Removing the retained revision history prevents rollback to those earlier revisions."
+      ],
+      "required_fact_scores": [
+        1,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Revision history is cleaned up",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Rollback to removed revisions is no longer available",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Cleanup begins only after a Deployment reaches a complete state",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "ReplicaSet count can exceed a nonzero history limit",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Old ReplicaSets with zero replicas are cleaned up",
+          "citations": [
+            "S2"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S2",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Rollback to removed revisions is no longer available",
+          "citations": [
+            "S2"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S2",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Revision history is cleaned up",
+          "citations": [
+            "S2"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S2",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "qwen3_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q06",
+      "question": "What is the production cluster administrator password?",
+      "answerable": false,
+      "answer": "The provided documents do not contain enough information to answer.",
+      "generation_seconds": 50.114128100001835,
+      "run_status": "completed",
+      "required_facts": [],
+      "required_fact_scores": [],
+      "unsupported_claims": [],
+      "refusal": "correct",
+      "claims": [],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Exact refusal; no factual answer claims requiring citations.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "deepseek_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q01",
+      "question": "How do I roll back nginx-deployment to the previous revision?",
+      "answerable": true,
+      "answer": "To roll back the Deployment, use the `kubectl rollout undo` command [S1].",
+      "generation_seconds": 208.44485270000587,
+      "run_status": "completed",
+      "required_facts": [
+        "Use kubectl rollout undo deployment/nginx-deployment."
+      ],
+      "required_fact_scores": [
+        0
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Use kubectl rollout undo to roll back a Deployment",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Command family supported but command omits nginx-deployment target required for this question.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "deepseek_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q02",
+      "question": "How do I roll back nginx-deployment to revision 2?",
+      "answerable": true,
+      "answer": "To roll back the Deployment to revision 2, run:\n```shell\nkubectl rollout undo deployment/nginx-deployment --to-revision=2\n```\n[S1]",
+      "generation_seconds": 192.95973629999207,
+      "run_status": "completed",
+      "required_facts": [
+        "Use kubectl rollout undo deployment/nginx-deployment --to-revision=2."
+      ],
+      "required_fact_scores": [
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Run kubectl rollout undo deployment/nginx-deployment --to-revision=2 to select revision 2",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "deepseek_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q03",
+      "question": "Does scaling a Deployment create a new revision?",
+      "answerable": true,
+      "answer": "Scaling a Deployment does not create a new revision [S1].",
+      "generation_seconds": 195.51947790000122,
+      "run_status": "completed",
+      "required_facts": [
+        "Scaling a Deployment does not create a new revision.",
+        "A new revision is created only when the Deployment's Pod template changes."
+      ],
+      "required_fact_scores": [
+        1,
+        0
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Scaling does not create a Deployment revision",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Omits condition for creation of a revision.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "deepseek_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q04",
+      "question": "Which part of a Deployment is restored when rolling back to an earlier revision?",
+      "answerable": true,
+      "answer": "[S1] When rolling back to an earlier revision, only the Deployment's Pod template part is rolled back.",
+      "generation_seconds": 140.80746230001387,
+      "run_status": "completed",
+      "required_facts": [
+        "Only the Deployment's Pod template is rolled back."
+      ],
+      "required_fact_scores": [
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Only the Deployment Pod template is rolled back",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": false,
+      "review_status": "completed",
+      "notes": "DeepSeek puts citation before rather than after the claim.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "deepseek_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q05",
+      "question": "What happens if a Deployment's .spec.revisionHistoryLimit is explicitly set to 0?",
+      "answerable": true,
+      "answer": "Setting `.spec.revisionHistoryLimit` to 0 explicitly removes all old ReplicaSets associated with the Deployment, thereby preventing any rollback to previous revisions [S1][S2].",
+      "generation_seconds": 210.21188450000773,
+      "run_status": "completed",
+      "required_facts": [
+        "Old ReplicaSets with zero replicas are cleaned up.",
+        "Cleanup occurs after the Deployment reaches a complete state.",
+        "Removing the retained revision history prevents rollback to those earlier revisions."
+      ],
+      "required_fact_scores": [
+        0,
+        0,
+        1
+      ],
+      "unsupported_claims": [
+        "Removes all old ReplicaSets without the zero-replica qualification."
+      ],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "All old ReplicaSets associated with the Deployment are removed",
+          "citations": [
+            "S1",
+            "S2"
+          ],
+          "supported_by_citations": false,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": false
+            },
+            {
+              "source_label": "S2",
+              "supported": false
+            }
+          ]
+        },
+        {
+          "text": "Rollback to removed revisions is no longer available",
+          "citations": [
+            "S1",
+            "S2"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S2",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Overgeneralizes cleanup and omits complete-state condition.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "deepseek_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q06",
+      "question": "What is the production cluster administrator password?",
+      "answerable": false,
+      "answer": "The provided documents do not contain enough information to answer.",
+      "generation_seconds": 105.59645889999229,
+      "run_status": "completed",
+      "required_facts": [],
+      "required_fact_scores": [],
+      "unsupported_claims": [],
+      "refusal": "correct",
+      "claims": [],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Exact refusal; no factual answer claims requiring citations.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "gemma4_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q01",
+      "question": "How do I roll back nginx-deployment to the previous revision?",
+      "answerable": true,
+      "answer": "To roll back the nginx-deployment to the previous revision, you can use one of the following methods:\n\n**Option 1: Rollback to the immediate previous revision**\n```shell\nkubectl rollout undo deployment/nginx-deployment\n``` [S1]\n\n**Option 2: Rollback to a specific revision (e.g., revision 2)**\n```shell\nkubectl rollout undo deployment/nginx-deployment --to-revision=2\n``` [S1]\n\nAfter performing the rollback, you can check if it was successful and if the Deployment is running as expected by running:\n```shell\nkubectl get deployment nginx-deployment\n``` [S2]",
+      "generation_seconds": 303.7502652999974,
+      "run_status": "completed",
+      "required_facts": [
+        "Use kubectl rollout undo deployment/nginx-deployment."
+      ],
+      "required_fact_scores": [
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Run kubectl rollout undo deployment/nginx-deployment to restore the previous revision",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Run kubectl rollout undo deployment/nginx-deployment --to-revision=2 to select revision 2",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Run kubectl get deployment nginx-deployment to inspect rollback success",
+          "citations": [
+            "S2"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S2",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": false,
+      "review_status": "completed",
+      "notes": "Closing code fences have citation text on same line, producing malformed Markdown. Citation intent is recognized for semantic scoring.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "gemma4_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q02",
+      "question": "How do I roll back nginx-deployment to revision 2?",
+      "answerable": true,
+      "answer": "To roll back the nginx-deployment to revision 2, you can use the following command:\n\n```shell\nkubectl rollout undo deployment/nginx-deployment --to-revision=2\n``` [S1]\n\nAfter running the command, you can check if the rollback was successful and the Deployment is running as expected by running:\n\n```shell\nkubectl get deployment nginx-deployment\n``` [S2]",
+      "generation_seconds": 275.89724350000324,
+      "run_status": "completed",
+      "required_facts": [
+        "Use kubectl rollout undo deployment/nginx-deployment --to-revision=2."
+      ],
+      "required_fact_scores": [
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Run kubectl rollout undo deployment/nginx-deployment --to-revision=2 to select revision 2",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Run kubectl get deployment nginx-deployment to inspect rollback success",
+          "citations": [
+            "S2"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S2",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": false,
+      "review_status": "completed",
+      "notes": "Closing code fences have citation text on same line, producing malformed Markdown. Citation intent is recognized for semantic scoring.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "gemma4_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q03",
+      "question": "Does scaling a Deployment create a new revision?",
+      "answerable": true,
+      "answer": "No, scaling a Deployment does not create a Deployment revision [S1]. This is intended to facilitate simultaneous manual- or auto-scaling [S1].",
+      "generation_seconds": 245.8375798000052,
+      "run_status": "completed",
+      "required_facts": [
+        "Scaling a Deployment does not create a new revision.",
+        "A new revision is created only when the Deployment's Pod template changes."
+      ],
+      "required_fact_scores": [
+        1,
+        0
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Scaling does not create a Deployment revision",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "This facilitates simultaneous manual or automatic scaling",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Omits condition for creation of a revision.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "gemma4_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q04",
+      "question": "Which part of a Deployment is restored when rolling back to an earlier revision?",
+      "answerable": true,
+      "answer": "When you roll back to an earlier revision, only the Deployment's Pod template part is rolled back [S1].",
+      "generation_seconds": 191.58829569999943,
+      "run_status": "completed",
+      "required_facts": [
+        "Only the Deployment's Pod template is rolled back."
+      ],
+      "required_fact_scores": [
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Only the Deployment Pod template is rolled back",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "gemma4_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q05",
+      "question": "What happens if a Deployment's .spec.revisionHistoryLimit is explicitly set to 0?",
+      "answerable": true,
+      "answer": "Explicitly setting `.spec.revisionHistoryLimit` to 0 results in cleaning up all of the Deployment's history [S1]. This means all old ReplicaSets with 0 replicas will be cleaned up [S2], and the Deployment will not be able to roll back [S1, S2]. The cleanup process starts after a Deployment reaches a complete state [S1]. However, if a rollout is triggered while the limit is set to 0, a new ReplicaSet is created before Kubernetes removes the old one [S1].",
+      "generation_seconds": 274.89594889999717,
+      "run_status": "completed",
+      "required_facts": [
+        "Old ReplicaSets with zero replicas are cleaned up.",
+        "Cleanup occurs after the Deployment reaches a complete state.",
+        "Removing the retained revision history prevents rollback to those earlier revisions."
+      ],
+      "required_fact_scores": [
+        1,
+        1,
+        1
+      ],
+      "unsupported_claims": [],
+      "refusal": "none",
+      "claims": [
+        {
+          "text": "Revision history is cleaned up",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Old ReplicaSets with zero replicas are cleaned up",
+          "citations": [
+            "S2"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S2",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Rollback to removed revisions is no longer available",
+          "citations": [
+            "S1",
+            "S2"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            },
+            {
+              "source_label": "S2",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "Cleanup begins only after a Deployment reaches a complete state",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        },
+        {
+          "text": "A rollout creates a new ReplicaSet before the old one is removed",
+          "citations": [
+            "S1"
+          ],
+          "supported_by_citations": true,
+          "citation_checks": [
+            {
+              "source_label": "S1",
+              "supported": true
+            }
+          ]
+        }
+      ],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    },
+    {
+      "dataset": "kubernetes",
+      "rubric_file": "kubernetes_dev_rubric_v1.json",
+      "evidence_file": "kubernetes_dev_evidence_v1.jsonl",
+      "result_file": "gemma4_kubernetes_dev_run1.jsonl",
+      "question_id": "K8S-Q06",
+      "question": "What is the production cluster administrator password?",
+      "answerable": false,
+      "answer": "The provided documents do not contain enough information to answer.",
+      "generation_seconds": 174.67220600000292,
+      "run_status": "completed",
+      "required_facts": [],
+      "required_fact_scores": [],
+      "unsupported_claims": [],
+      "refusal": "correct",
+      "claims": [],
+      "format_pass": true,
+      "review_status": "completed",
+      "notes": "Exact refusal; no factual answer claims requiring citations.",
+      "reviewer": "assistant",
+      "human_verified": false,
+      "evidence_sha256": "e54932ef109f3c4893d8aed43710b1d592312ddfdd43b020dfd7d8e11277cac4"
+    }
+  ],
+  "review_method": {
+    "reviewer": "assistant",
+    "human_verified": false,
+    "purpose": "Development evaluation; not independent human or held-out benchmark",
+    "required_facts": "Binary, strict all qualifications. NIST Q04 fact 2 requires explicit guidance on practices/controls; generic online-resources mention is insufficient.",
+    "claims": "Atomic semantic units, including commands; repeated factual assertions counted as separate occurrences. Introductory framing is excluded.",
+    "citation_attachment": "Sentence-local citations; a marker after a code block covers that command. A group at sentence end covers its atomic claims. Noncanonical but intelligible markers are recognized semantically and penalized in format.",
+    "coverage": "An atomic claim is covered if at least one attached source fully supports it; wrong extra sources reduce precision.",
+    "refusal": "N/A citation metrics when no factual answer claims; false refusal penalized separately.",
+    "format": "Canonical source labels, sentence-local claims, citations immediately after valid code blocks, no A/B mode labels.",
+    "limitations": "No exhaustive relevant-chunk labels: Recall/Precision/MRR/NDCG are not calculated."
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "review_method": {
+    "reviewer": "assistant",
+    "human_verified": false,
+    "purpose": "Development evaluation; not independent human or held-out benchmark",
+    "required_facts": "Binary, strict all qualifications. NIST Q04 fact 2 requires explicit guidance on practices/controls; generic online-resources mention is insufficient.",
+    "claims": "Atomic semantic units, including commands; repeated factual assertions counted as separate occurrences. Introductory framing is excluded.",
+    "citation_attachment": "Sentence-local citations; a marker after a code block covers that command. A group at sentence end covers its atomic claims. Noncanonical but intelligible markers are recognized semantically and penalized in format.",
+    "coverage": "An atomic claim is covered if at least one attached source fully supports it; wrong extra sources reduce precision.",
+    "refusal": "N/A citation metrics when no factual answer claims; false refusal penalized separately.",
+    "format": "Canonical source labels, sentence-local claims, citations immediately after valid code blocks, no A/B mode labels.",
+    "limitations": "No exhaustive relevant-chunk labels: Recall/Precision/MRR/NDCG are not calculated."
+  },
+  "results": [
+    {
+      "dataset": "kubernetes",
+      "result_file": "deepseek_kubernetes_dev_run1.jsonl",
+      "counts": {
+        "questions": 6,
+        "correct_answers": 3,
+        "required_facts": 8,
+        "correct_required_facts": 4,
+        "citation_links": 8,
+        "supported_citation_links": 6,
+        "claims": 6,
+        "citation_covered_claims": 5,
+        "answerable_questions": 5,
+        "false_refusals": 0,
+        "unanswerable_questions": 1,
+        "correct_refusals": 1,
+        "format_passes": 5
+      },
+      "answer_accuracy": 0.5,
+      "required_fact_coverage_micro": 0.5,
+      "citation_precision_micro": 0.75,
+      "citation_coverage_micro": 0.8333333333333334,
+      "correct_refusal_rate": 1.0,
+      "false_refusal_rate": 0.0,
+      "format_compliance": 0.8333333333333334,
+      "latency_seconds": {
+        "mean": 175.58997876666885,
+        "median": 194.23960709999665,
+        "min": 105.59645889999229,
+        "max": 210.21188450000773,
+        "total": 1053.539872600013
+      }
+    },
+    {
+      "dataset": "kubernetes",
+      "result_file": "gemma4_kubernetes_dev_run1.jsonl",
+      "counts": {
+        "questions": 6,
+        "correct_answers": 5,
+        "required_facts": 8,
+        "correct_required_facts": 7,
+        "citation_links": 14,
+        "supported_citation_links": 14,
+        "claims": 13,
+        "citation_covered_claims": 13,
+        "answerable_questions": 5,
+        "false_refusals": 0,
+        "unanswerable_questions": 1,
+        "correct_refusals": 1,
+        "format_passes": 4
+      },
+      "answer_accuracy": 0.8333333333333334,
+      "required_fact_coverage_micro": 0.875,
+      "citation_precision_micro": 1.0,
+      "citation_coverage_micro": 1.0,
+      "correct_refusal_rate": 1.0,
+      "false_refusal_rate": 0.0,
+      "format_compliance": 0.6666666666666666,
+      "latency_seconds": {
+        "mean": 244.44025653333424,
+        "median": 260.3667643500012,
+        "min": 174.67220600000292,
+        "max": 303.7502652999974,
+        "total": 1466.6415392000054
+      }
+    },
+    {
+      "dataset": "kubernetes",
+      "result_file": "phi4-mini_kubernetes_dev_run1.jsonl",
+      "counts": {
+        "questions": 6,
+        "correct_answers": 4,
+        "required_facts": 8,
+        "correct_required_facts": 5,
+        "citation_links": 6,
+        "supported_citation_links": 5,
+        "claims": 7,
+        "citation_covered_claims": 5,
+        "answerable_questions": 5,
+        "false_refusals": 1,
+        "unanswerable_questions": 1,
+        "correct_refusals": 1,
+        "format_passes": 4
+      },
+      "answer_accuracy": 0.6666666666666666,
+      "required_fact_coverage_micro": 0.625,
+      "citation_precision_micro": 0.8333333333333334,
+      "citation_coverage_micro": 0.7142857142857143,
+      "correct_refusal_rate": 1.0,
+      "false_refusal_rate": 0.2,
+      "format_compliance": 0.6666666666666666,
+      "latency_seconds": {
+        "mean": 35.22955408333049,
+        "median": 30.473590549998335,
+        "min": 22.190520000003744,
+        "max": 62.60895729999902,
+        "total": 211.37732449998293
+      }
+    },
+    {
+      "dataset": "kubernetes",
+      "result_file": "qwen3_kubernetes_dev_run1.jsonl",
+      "counts": {
+        "questions": 6,
+        "correct_answers": 4,
+        "required_facts": 8,
+        "correct_required_facts": 7,
+        "citation_links": 17,
+        "supported_citation_links": 16,
+        "claims": 18,
+        "citation_covered_claims": 16,
+        "answerable_questions": 5,
+        "false_refusals": 0,
+        "unanswerable_questions": 1,
+        "correct_refusals": 1,
+        "format_passes": 4
+      },
+      "answer_accuracy": 0.6666666666666666,
+      "required_fact_coverage_micro": 0.875,
+      "citation_precision_micro": 0.9411764705882353,
+      "citation_coverage_micro": 0.8888888888888888,
+      "correct_refusal_rate": 1.0,
+      "false_refusal_rate": 0.0,
+      "format_compliance": 0.6666666666666666,
+      "latency_seconds": {
+        "mean": 86.82040569999663,
+        "median": 85.09102344999701,
+        "min": 50.114128100001835,
+        "max": 132.3377310999931,
+        "total": 520.9224341999798
+      }
+    },
+    {
+      "dataset": "nist",
+      "result_file": "deepseek_nist_dev_run2.jsonl",
+      "counts": {
+        "questions": 6,
+        "correct_answers": 4,
+        "required_facts": 16,
+        "correct_required_facts": 14,
+        "citation_links": 26,
+        "supported_citation_links": 23,
+        "claims": 17,
+        "citation_covered_claims": 17,
+        "answerable_questions": 5,
+        "false_refusals": 0,
+        "unanswerable_questions": 1,
+        "correct_refusals": 1,
+        "format_passes": 6
+      },
+      "answer_accuracy": 0.6666666666666666,
+      "required_fact_coverage_micro": 0.875,
+      "citation_precision_micro": 0.8846153846153846,
+      "citation_coverage_micro": 1.0,
+      "correct_refusal_rate": 1.0,
+      "false_refusal_rate": 0.0,
+      "format_compliance": 1.0,
+      "latency_seconds": {
+        "mean": 290.1745376166703,
+        "median": 246.508580550013,
+        "min": 159.5169212000037,
+        "max": 566.9966572000121,
+        "total": 1741.047225700022
+      }
+    },
+    {
+      "dataset": "nist",
+      "result_file": "gemma4_nist_dev_run2.jsonl",
+      "counts": {
+        "questions": 6,
+        "correct_answers": 5,
+        "required_facts": 16,
+        "correct_required_facts": 15,
+        "citation_links": 39,
+        "supported_citation_links": 36,
+        "claims": 23,
+        "citation_covered_claims": 22,
+        "answerable_questions": 5,
+        "false_refusals": 0,
+        "unanswerable_questions": 1,
+        "correct_refusals": 1,
+        "format_passes": 6
+      },
+      "answer_accuracy": 0.8333333333333334,
+      "required_fact_coverage_micro": 0.9375,
+      "citation_precision_micro": 0.9230769230769231,
+      "citation_coverage_micro": 0.9565217391304348,
+      "correct_refusal_rate": 1.0,
+      "false_refusal_rate": 0.0,
+      "format_compliance": 1.0,
+      "latency_seconds": {
+        "mean": 399.30318223333353,
+        "median": 419.46778870001435,
+        "min": 270.75127949999296,
+        "max": 482.1068355999887,
+        "total": 2395.8190934000013
+      }
+    },
+    {
+      "dataset": "nist",
+      "result_file": "phi4-mini_nist_dev_run2.jsonl",
+      "counts": {
+        "questions": 6,
+        "correct_answers": 4,
+        "required_facts": 16,
+        "correct_required_facts": 14,
+        "citation_links": 20,
+        "supported_citation_links": 13,
+        "claims": 16,
+        "citation_covered_claims": 13,
+        "answerable_questions": 5,
+        "false_refusals": 1,
+        "unanswerable_questions": 1,
+        "correct_refusals": 1,
+        "format_passes": 4
+      },
+      "answer_accuracy": 0.6666666666666666,
+      "required_fact_coverage_micro": 0.875,
+      "citation_precision_micro": 0.65,
+      "citation_coverage_micro": 0.8125,
+      "correct_refusal_rate": 1.0,
+      "false_refusal_rate": 0.2,
+      "format_compliance": 0.6666666666666666,
+      "latency_seconds": {
+        "mean": 87.72084081666253,
+        "median": 85.71920969999337,
+        "min": 59.678698200004874,
+        "max": 113.36592640000163,
+        "total": 526.3250448999752
+      }
+    },
+    {
+      "dataset": "nist",
+      "result_file": "qwen3_nist_dev_run2.jsonl",
+      "counts": {
+        "questions": 6,
+        "correct_answers": 5,
+        "required_facts": 16,
+        "correct_required_facts": 15,
+        "citation_links": 19,
+        "supported_citation_links": 18,
+        "claims": 20,
+        "citation_covered_claims": 18,
+        "answerable_questions": 5,
+        "false_refusals": 0,
+        "unanswerable_questions": 1,
+        "correct_refusals": 1,
+        "format_passes": 5
+      },
+      "answer_accuracy": 0.8333333333333334,
+      "required_fact_coverage_micro": 0.9375,
+      "citation_precision_micro": 0.9473684210526315,
+      "citation_coverage_micro": 0.9,
+      "correct_refusal_rate": 1.0,
+      "false_refusal_rate": 0.0,
+      "format_compliance": 0.8333333333333334,
+      "latency_seconds": {
+        "mean": 191.3765664333332,
+        "median": 189.17894364999665,
+        "min": 116.85893380001653,
+        "max": 241.65315880000708,
+        "total": 1148.2593985999993
+      }
+    }
+  ]
+}
