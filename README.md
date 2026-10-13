@@ -1,3 +1,28 @@
+# Enterprise RAG: Local Document Question Answering with Source Citations
+
+![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-REST_API-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-Local_Inference-222222?style=for-the-badge)
+![Qdrant](https://img.shields.io/badge/Qdrant-Vector_Search-DC244C?style=for-the-badge)
+![LangChain](https://img.shields.io/badge/LangChain-RAG_Pipeline-1C3C3C?style=for-the-badge)
+![Docker](https://img.shields.io/badge/Docker-Local_Services-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+
+> **AI Engineer Portfolio Project**  
+> An end-to-end local RAG application for exploring **NIST Cybersecurity
+> Framework 2.0** and **Kubernetes Deployments** documentation.
+> Implements **PDF and Markdown ingestion**, **token-aware chunking**,
+> **semantic retrieval with Qdrant**, and **source-cited answers using Ollama**.
+> Includes a **FastAPI backend**, an **English web interface**, and
+> development evaluation of **four local language models** using frozen
+> retrieved evidence.
+
+**Document collections:** NIST CSF 2.0 · Kubernetes Deployments  
+**Models evaluated:** Phi-4 Mini · Qwen3 · DeepSeek-R1 · Gemma 4  
+**Execution:** Local inference without paid inference APIs  
+**Status:** Working local demo; development evaluation completed
+
+---
+
 # Enterprise RAG Assistant
 
 Ứng dụng hỏi đáp tài liệu chạy local với Ollama, Qdrant và FastAPI.
