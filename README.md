@@ -164,3 +164,20 @@ Ví dụ Kubernetes:
 - Không chứa thông tin nội bộ riêng của doanh nghiệp.
 - Chưa có upload tài liệu hoặc truy vấn kết hợp hai bộ.
 - Bản hiện tại phục vụ local, chưa phải triển khai production.
+
+## Sources and acknowledgements
+
+- **NIST CSF 2.0:** National Institute of Standards and Technology,
+  February 26, 2024.
+  [Publication DOI](https://doi.org/10.6028/NIST.CSWP.29) ·
+  [Source PDF](https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf)
+
+- **Kubernetes Deployments:** Official Kubernetes documentation,
+  pinned to commit `e96866675691ab050bc2f5dffc19f21f9fc8c646`.
+  [Source snapshot](https://github.com/kubernetes/website/blob/e96866675691ab050bc2f5dffc19f21f9fc8c646/content/en/docs/concepts/workloads/controllers/deployment.md)
+
+- **Embedding model:**
+  [sentence-transformers/all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2).
+
+- **Synthetic documents:** Created for development testing;
+  they do not represent actual organizational policies.
